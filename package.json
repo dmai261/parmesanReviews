@@ -9,7 +9,8 @@
   },
   "scripts": {
     "react-dev": "webpack --watch --display-error-details",
-    "start": "nodemon --inspect ./server/index.js"
+    "start": "nodemon --inspect ./server/index.js",
+    "build": "echo 'TBD'"
   },
   "dependencies": {
     "@babel/core": "^7.0.0",
