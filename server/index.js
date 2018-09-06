@@ -20,11 +20,23 @@ class Server {
   }
 
   handleGets() {
-    // TBD this.app.get
+    this.app.get('/reviews', (req, res) => {
+      // TBD do stuff
+      res.status(202).send();
+    });
   }
 
   handlePosts() {
     // TBD this.app.post
+    this.app.post('/reviews/helpful', (req, res) => {
+      // TBD do stuff
+      res.status(202).send();
+    });
+
+    this.app.post('/reviews/new', (req, res) => {
+      // TBD do stuff
+      res.status(202).send();
+    });
   }
 }
 
