@@ -21,8 +21,8 @@ class App extends React.Component {
       url: `${this.serverUrl}/reviews/${this.state.currentProductId}`,
       method: 'GET',
       headers: {
-        content-type: 'application/json',
-        cache-control: 'no-cache',
+        'content-type': 'application/json',
+        'cache-control': 'no-cache',
       },
     };
 
@@ -34,8 +34,9 @@ class App extends React.Component {
 
   render() {
     const { state } = this;
+    const stringState = JSON.stringify(state.reviews);
     return (
-      <div>{state.reviews}</div>
+      <div>{stringState}</div>
     );
   }
 }
