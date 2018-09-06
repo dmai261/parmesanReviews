@@ -66,6 +66,17 @@ class Database {
     }
   }
 
+  getReviews(productId, cb) {
+    let search = null;
+    if (productId) {
+      search = { productId: productId };
+    }
+    this.Review.find({ productId: productId }, (err, reviews) => {
+      if (err) return console.error(err);
+      cb(null, reviews);
+    })
+  }
+
   init() {
     mongoose.connect(`mongodb://${this.user}:${this.pw}${this.dburi}`);
     this.db = mongoose.connection;
