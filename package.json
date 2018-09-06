@@ -8,10 +8,29 @@
     "node": ">=6.13.0"
   },
   "scripts": {
+    "react-dev": "webpack --watch --display-error-details"
   },
   "dependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.2",
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "jest": "^23.5.0",
+    "jquery": "^3.3.1",
+    "math.js": "^1.1.43",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.18.4",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "webpack": "^4.17.2"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "webpack-cli": "^3.1.0"
   }
 }
