@@ -67,14 +67,11 @@ class Database {
   }
 
   getReviews(productId, cb) {
-    let search = null;
-    if (productId) {
-      search = { productId: productId };
-    }
-    this.Review.find({ productId: productId }, (err, reviews) => {
+    const search = { productId };
+    this.Review.find(search, (err, reviews) => {
       if (err) return console.error(err);
-      cb(null, reviews);
-    })
+      return cb(null, reviews);
+    });
   }
 
   init() {
