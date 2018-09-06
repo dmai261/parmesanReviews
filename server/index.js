@@ -15,6 +15,16 @@ class Server {
     this.app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
     this.app.listen(this.port);
     console.log(`server listening on port ${this.port}...`);
+    this.handleGets();
+    this.handlePosts();
+  }
+
+  handleGets() {
+    // TBD this.app.get
+  }
+
+  handlePosts() {
+    // TBD this.app.post
   }
 }
 

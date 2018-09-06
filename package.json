@@ -10,7 +10,8 @@
   "scripts": {
     "react-dev": "webpack --watch --display-error-details",
     "start": "nodemon --inspect ./server/index.js",
-    "build": "echo 'TBD'"
+    "build": "echo 'TBD'",
+    "seed": "echo 'TBD seeding script'"
   },
   "dependencies": {
     "@babel/core": "^7.0.0",
