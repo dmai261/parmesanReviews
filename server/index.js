@@ -1,7 +1,8 @@
+require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-require('dotenv').config();
+const db = require('../database/index.js');
 
 class Server {
   constructor() {
