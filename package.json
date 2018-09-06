@@ -8,7 +8,8 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "react-dev": "webpack --watch --display-error-details"
+    "react-dev": "webpack --watch --display-error-details",
+    "start": "nodemon --inspect ./server/index.js"
   },
   "dependencies": {
     "@babel/core": "^7.0.0",
