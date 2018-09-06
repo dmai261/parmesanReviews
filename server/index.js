@@ -27,14 +27,12 @@ class Server {
   handleGets() {
     // return reviews with posted productId
     this.app.get('/reviews/*', bodyParser.json(), (req, res) => {
-      const productId = req.originalUrl.split('/')[2];
-
+      const productId = req.originalUrl.split('/')[2]; // get productId from from url
       db.getReviews(productId, (err, data) => {
         if (err) return console.error(err);
         console.log(data);
         res.status(202).send(data);
       });
-
     });
   }
 
@@ -42,14 +40,14 @@ class Server {
     // increment the helpfulness of a review
     this.app.post('/reviews/*/helpful', bodyParser.json(), (req, res) => {
       // TBD do stuff
-      // console.log("helpful");
+      // console.log("POST to helpful");
       res.status(202).send();
     });
 
     // create a new review
     this.app.post('/reviews/new', bodyParser.json(), (req, res) => {
       // TBD do stuff
-      // console.log("new review");
+      // console.log("POST to new review");
       res.status(202).send();
     });
   }
