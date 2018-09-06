@@ -9,7 +9,10 @@
   },
   "scripts": {
     "react-dev": "webpack --watch --display-error-details",
-    "start": "nodemon --inspect ./server/index.js"
+    "start": "nodemon --inspect ./server/index.js",
+    "test": "jest --coverage",
+    "build": "echo 'TBD'",
+    "seed": "echo 'TBD seeding script'"
   },
   "dependencies": {
     "@babel/core": "^7.0.0",
@@ -21,9 +24,11 @@
     "body-parser": "^1.18.3",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
+    "faker": "^4.1.0",
     "jest": "^23.5.0",
     "jquery": "^3.3.1",
     "math.js": "^1.1.43",
+    "mongoose": "^5.2.13",
     "morgan": "^1.9.0",
     "nodemon": "^1.18.4",
     "react": "^16.4.2",

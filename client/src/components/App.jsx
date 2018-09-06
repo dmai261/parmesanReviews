@@ -8,7 +8,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className={style.app}>Hello app!</div>
+      <div>Hello app!</div>
     )
   }
 }
