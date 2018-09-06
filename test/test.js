@@ -1,4 +1,4 @@
-test('expect 3 to equal 3', () => {
-  const sum = 3;
-  expect(sum).toBe(3);
+test('expect 1 to equal 1', () => {
+  const sum = 1;
+  expect(sum).toBe(1);
 });
