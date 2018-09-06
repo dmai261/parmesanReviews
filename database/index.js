@@ -4,7 +4,7 @@ const helpers = require('../server/helpers.js');
 
 class Database {
   constructor() {
-    this.creatingFakeData = true;
+    this.creatingFakeData = false;
     this.dburi = process.env.DBURI;
     this.user = process.env.DBUSER;
     this.pw = process.env.DBPW;
@@ -28,7 +28,7 @@ class Database {
 
   createFakeData() {
     if (this.creatingFakeData) {
-      console.log("creating fake data");
+      console.log("creating fake data...");
       let productIdCounter = 1;
       let reviewsCounter = 0;
 
@@ -50,17 +50,18 @@ class Database {
           imageUrl: faker.image.imageUrl(),
         };
 
-        console.log(reviewObj);
+        const review = new this.Review(reviewObj);
 
-        // const review = new this.Review(reviewObj);
-
-        // review.save((err) => {
-        //   if (err) return console.error(err);
-        //   reviewsCounter += 1;
-
-        //   recursivelyCreateFakeDocs();
-        // });
+        review.save((err) => {
+          if (err) return console.error(err);
+          reviewsCounter += 1;
+          if (reviewsCounter % 10 === 0) {
+            productIdCounter += 1;
+          }
+          return recursivelyCreateFakeDocs();
+        });
       };
+
       recursivelyCreateFakeDocs();
     }
   }
