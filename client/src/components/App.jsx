@@ -13,8 +13,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    // TBD GET request to server for review data
-    // TBD refactor ajax request to fetch
+    // TBD refactor ajax request to fetch/promises/await
     const settings = {
       async: true,
       crossDomain: true,
@@ -27,7 +26,7 @@ class App extends React.Component {
     };
 
     $.ajax(settings).done((data) => {
-      console.log('successful GET!');
+      console.log(`A successful GET request to server returned ${data.length} review objects`);
       this.setState({ reviews: data });
     });
   }

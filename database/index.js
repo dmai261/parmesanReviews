@@ -68,7 +68,7 @@ class Database {
 
   getReviews(productId, cb) {
     const search = { productId };
-    this.Review.find(search, (err, reviews) => {
+    this.Review.find(search).sort({ numHelpful: -1 }).exec((err, reviews) => {
       if (err) return console.error(err);
       return cb(null, reviews);
     });
