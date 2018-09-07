@@ -8,6 +8,8 @@ class Mentions extends React.Component {
     // };
   }
   render() {
+    const state = this.props.getState();
+    const { reviews } = state;
     return (
       <React.Fragment>
         <h3 className={styles.test}>Read reviews that mention</h3>
