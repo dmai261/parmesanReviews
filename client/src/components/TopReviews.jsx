@@ -1,4 +1,5 @@
 import React from 'react';
+import Review from './Review.jsx';
 // import style from '../styles/main.css'; // TBD get modular css working
 
 class TopReviews extends React.Component {
@@ -9,7 +10,13 @@ class TopReviews extends React.Component {
   }
   render() {
     return (
-      <h2>TopReviews</h2>
+      <React.Fragment>
+        <h3>Top customer reviews</h3>
+        <Review />
+        <Review />
+        <Review />
+        <Review />
+      </React.Fragment>
     );
   }
 }

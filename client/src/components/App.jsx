@@ -39,7 +39,6 @@ class App extends React.Component {
     const stringState = JSON.stringify(state.reviews[0]);
     return (
       <React.Fragment>
-        <div>{stringState}</div>
         <Header />
         <Mentions />
         <TopReviews />
