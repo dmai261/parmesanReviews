@@ -1,5 +1,5 @@
 import React from 'react';
-// import style from '../styles/main.css'; // TBD get modular css working
+import styles from '../styles/Mentions.css';
 
 class Mentions extends React.Component {
   constructor(props) {
@@ -10,7 +10,7 @@ class Mentions extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <h3>Read reviews that mention</h3>
+        <h3 className={styles.test}>Read reviews that mention</h3>
         <p>MENTIONS HERE</p>
         <p>^ See more</p>
       </React.Fragment>

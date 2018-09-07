@@ -3,7 +3,7 @@ import $ from 'jquery';
 import Header from './Header.jsx';
 import Mentions from './Mentions.jsx';
 import TopReviews from './TopReviews.jsx';
-// import style from '../styles/main.css'; // TBD get modular css working
+import styles from '../styles/main.css';
 
 class App extends React.Component {
   constructor(props) {

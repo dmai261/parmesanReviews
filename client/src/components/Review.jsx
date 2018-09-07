@@ -1,5 +1,4 @@
 import React from 'react';
-// import style from '../styles/main.css'; // TBD get modular css working
 
 class Review extends React.Component {
   constructor(props) {

@@ -1,6 +1,5 @@
 import React from 'react';
 import Review from './Review.jsx';
-// import style from '../styles/main.css'; // TBD get modular css working
 
 class TopReviews extends React.Component {
   constructor(props) {
