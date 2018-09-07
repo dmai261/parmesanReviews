@@ -11,7 +11,7 @@ class App extends React.Component {
     this.serverUrl = 'http://localhost:1337';
     this.state = {
       reviews: [],
-      currentProductId: 37,
+      currentProductId: 1,
     };
   }
 
