@@ -33,7 +33,7 @@ class App extends React.Component {
 
   render() {
     const { state } = this;
-    const stringState = JSON.stringify(state.reviews);
+    const stringState = JSON.stringify(state.reviews[0]);
     return (
       <div>{stringState}</div>
     );
