@@ -1,5 +1,8 @@
 import React from 'react';
 import $ from 'jquery';
+import Header from './Header.jsx';
+import Mentions from './Mentions.jsx';
+import TopReviews from './TopReviews.jsx';
 // import style from '../styles/main.css'; // TBD get modular css working
 
 class App extends React.Component {
@@ -35,7 +38,12 @@ class App extends React.Component {
     const { state } = this;
     const stringState = JSON.stringify(state.reviews[0]);
     return (
-      <div>{stringState}</div>
+      <React.Fragment>
+        <div>{stringState}</div>
+        <Header />
+        <Mentions />
+        <TopReviews />
+      </React.Fragment>
     );
   }
 }
