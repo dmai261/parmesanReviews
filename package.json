@@ -9,7 +9,7 @@
   },
   "scripts": {
     "react-dev": "webpack --watch --display-error-details",
-    "start": "nodemon --inspect ./server/index.js",
+    "start": "nodemon --inspect ./server/index.js && sudo mongod",
     "test": "jest --coverage",
     "build": "echo 'TBD'",
     "seed": "node ./database/seed.js"
