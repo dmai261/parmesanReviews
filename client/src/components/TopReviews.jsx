@@ -1,6 +1,6 @@
 import React from 'react';
 import Review from './Review.jsx';
-
+import styles from '../styles/TopReviews.css';
 class TopReviews extends React.Component {
   constructor(props) {
     super(props);
@@ -19,7 +19,7 @@ class TopReviews extends React.Component {
       <React.Fragment>
         <h4>Top customer reviews</h4>
         {reviewElements}
-        <p>See all {reviews.length} reviews > </p>
+        <p className={styles.blue}>See all {reviews.length} reviews > </p>
         <button>Write a customer review</button>
       </React.Fragment>
     );

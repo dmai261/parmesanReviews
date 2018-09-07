@@ -1,5 +1,5 @@
 import React from 'react';
-
+import styles from '../styles/Review.css';
 class Review extends React.Component {
   constructor(props) {
     super(props);
@@ -10,18 +10,19 @@ class Review extends React.Component {
     const { review } = this.props;
     return (
       <React.Fragment>
-        <div>%PIC% {review.username}</div>
-        <br></br>
-        <div>***** <b>{review.title}</b></div>
-        <div>{review.timestamp}</div>
-        <div>Verified? {review.verifiedPurchase}</div>
-        <div>{review.text}</div>
-        <br></br>
-        <div>{review.numHelpful} people found this helpful</div>
-        <br></br>
-        <div><button>Helpful</button> Comment Report Abuse</div>
-        <br></br>
-        <br></br>
+        <div className={styles.review}>
+          <div className={styles.profileContainer}><img className={styles.profile} src='./img/profile.jpg'></img> {review.username}</div>
+          <br></br>
+          <div><a className={styles.gold}><b>*****</b> </a><b>{review.title}</b></div>
+          <div className={styles.grey}>{review.timestamp}</div>
+          <div className={styles.orange}>TBD Verified {review.verifiedPurchase}</div>
+          <div>{review.text}</div>
+          <br></br>
+          <div className={styles.grey}>{review.numHelpful} people found this helpful</div>
+          <div><button>Helpful</button> <a className={styles.grey}>    Comment    |     Report Abuse   </a></div>
+          <br></br>
+          <br></br>
+        </div>
       </React.Fragment>
     );
   }

@@ -21,14 +21,15 @@ class Header extends React.Component {
 
     return (
       <React.Fragment>
-        <h3 className={styles.test}>Customer reviews</h3>
-        <h4>***** {reviews.length}</h4>
-        <p>{avgRating} out of 5 stars</p>
-        <div>HISTOGRAM HERE</div>
-        <div>HISTOGRAM HERE</div>
-        <div>HISTOGRAM HERE</div>
-        <div>HISTOGRAM HERE</div>
-        <p>See all {reviews.length} customer reviews ></p>
+        <h3>Customer reviews</h3>
+        <div><a className={styles.gold}><b>*****</b></a> <a className={styles.blue}>{reviews.length}</a></div>
+        <div className={styles.blue}>{avgRating} out of 5 stars</div>
+        <br></br>
+        <div className={styles.gold}>HISTOGRAM HERE</div>
+        <div className={styles.gold}>HISTOGRAM HERE</div>
+        <div className={styles.gold}>HISTOGRAM HERE</div>
+        <div className={styles.gold}>HISTOGRAM HERE</div>
+        <p className={styles.blue}>See all {reviews.length} customer reviews ></p>
       </React.Fragment>
     );
   }

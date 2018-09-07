@@ -1,0 +1,28 @@
+:local .grey {
+  color: gray;
+}
+
+:local .orange {
+  color: #C15926;
+}
+
+:local .gold {
+  color: #FCB80D;
+}
+
+:local .profile {
+  height: 3.5vmin;
+  width: 3.5vmin;
+  padding-right: 1.5vmin;
+}
+
+:local .profileContainer {
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+:local .review {
+  font-size: 2vmin;
+  line-height: 2.75vmin;
+}
