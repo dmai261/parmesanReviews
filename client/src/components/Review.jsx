@@ -3,13 +3,15 @@ import React from 'react';
 class Review extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    // };
+
   }
+
   render() {
+    const state = this.props.getState();
+    const { reviews } = state;
     return (
       <React.Fragment>
-        <h3>Review</h3>
+        <h3>{JSON.stringify(reviews[0])}</h3>
       </React.Fragment>
     );
   }

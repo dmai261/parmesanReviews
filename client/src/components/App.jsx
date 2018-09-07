@@ -34,6 +34,10 @@ class App extends React.Component {
     });
   }
 
+  getState() {
+    return this.state;
+  }
+
   render() {
     const { state } = this;
     const stringState = JSON.stringify(state.reviews[0]);
@@ -41,7 +45,7 @@ class App extends React.Component {
       <React.Fragment>
         <Header />
         <Mentions />
-        <TopReviews />
+        <TopReviews getState={this.getState.bind(this)} />
       </React.Fragment>
     );
   }

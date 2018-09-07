@@ -11,10 +11,7 @@ class TopReviews extends React.Component {
     return (
       <React.Fragment>
         <h3>Top customer reviews</h3>
-        <Review />
-        <Review />
-        <Review />
-        <Review />
+        <Review getState={this.props.getState} />
       </React.Fragment>
     );
   }
