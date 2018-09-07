@@ -20,8 +20,19 @@ class Server {
     }));
     this.app.listen(this.port);
     console.log(`server listening on port ${this.port}...`);
+
+    this.app.use(express.static('public'));
+    console.log('server serving static react from /public...');
+
     this.handleGets();
     this.handlePosts();
+    this.handleOptions();
+  }
+
+  handleOptions() {
+    this.app.options('/reviews/*', (req, res) => {
+      res.status(200).send();
+    });
   }
 
   handleGets() {
@@ -30,7 +41,6 @@ class Server {
       const productId = req.originalUrl.split('/')[2]; // get productId from from url
       db.getReviews(productId, (err, data) => {
         if (err) return console.error(err);
-        console.log(data);
         res.status(202).send(data);
       });
     });
