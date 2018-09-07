@@ -12,7 +12,7 @@
     "start": "nodemon --inspect ./server/index.js",
     "test": "jest --coverage",
     "build": "echo 'TBD'",
-    "seed": "echo 'TBD db seeding script'"
+    "seed": "node ./database/seed.js"
   },
   "dependencies": {
     "@babel/preset-env": "^7.0.0",
