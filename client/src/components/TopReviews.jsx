@@ -17,7 +17,7 @@ class TopReviews extends React.Component {
     });
     return (
       <React.Fragment>
-        <h3>Top customer reviews</h3>
+        <h4>Top customer reviews</h4>
         {reviewElements}
         <p>See all {reviews.length} reviews > </p>
         <button>Write a customer review</button>

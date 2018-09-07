@@ -10,7 +10,6 @@ class Review extends React.Component {
     const { review } = this.props;
     return (
       <React.Fragment>
-        <br></br>
         <div>%PIC% {review.username}</div>
         <br></br>
         <div>***** <b>{review.title}</b></div>
@@ -21,6 +20,7 @@ class Review extends React.Component {
         <div>{review.numHelpful} people found this helpful</div>
         <br></br>
         <div><button>Helpful</button> Comment Report Abuse</div>
+        <br></br>
         <br></br>
       </React.Fragment>
     );
