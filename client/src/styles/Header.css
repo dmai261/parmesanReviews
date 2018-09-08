@@ -5,3 +5,8 @@
 :local .gold {
   color: #FCB80D;
 }
+
+:local .blueSmall {
+  color: #2D83E0;
+  font-size: 1.5vmin;
+}

@@ -22,7 +22,7 @@ class Review extends React.Component {
           <div className={styles.orange}><b>{isVerified}</b></div>
           <p>{review.text}</p>
           <p className={styles.grey}>{review.numHelpful} people found this helpful</p>
-          <div><button>Helpful</button> <a className={styles.grey}>    Comment    |     Report Abuse   </a></div>
+          <div><button className={styles.button}>Helpful</button> <a className={styles.grey}> |    Comment    |     Report Abuse   </a></div>
           <br></br>
           <br></br>
         </div>

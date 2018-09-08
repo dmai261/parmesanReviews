@@ -1,3 +1,8 @@
 :local .blue {
   color: #2D83E0;
 }
+
+:local .button {
+  height: 3vmin;
+  width: 22.5vmin;
+}
