@@ -84,7 +84,7 @@ class Database {
     this.db = mongoose.connection;
     this.db.on('error', console.error.bind(console, 'db connection error:'));
     this.db.once('open', () => {
-      console.log("connected to mLab...");
+      console.log("connected to mongo...");
     });
   }
 
@@ -94,7 +94,7 @@ class Database {
     this.db = mongoose.connection;
     this.db.on('error', console.error.bind(console, 'db connection error:'));
     this.db.once('open', () => {
-      console.log("connected to mLab...");
+      console.log("connected to mongo...");
       this.createFakeData();
     });
   }

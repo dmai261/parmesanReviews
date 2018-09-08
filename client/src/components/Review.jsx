@@ -1,4 +1,5 @@
 import React from 'react';
+const moment = require('moment');
 import styles from '../styles/Review.css';
 class Review extends React.Component {
   constructor(props) {
@@ -8,17 +9,19 @@ class Review extends React.Component {
 
   render() {
     const { review } = this.props;
+    let isVerified = '';
+    if (review.verifiedPurchase) {
+      isVerified = 'Verified Purchase';
+    }
     return (
       <React.Fragment>
         <div className={styles.review}>
           <div className={styles.profileContainer}><img className={styles.profile} src='./img/profile.jpg'></img> {review.username}</div>
-          <br></br>
           <div><a className={styles.gold}><b>*****</b> </a><b>{review.title}</b></div>
-          <div className={styles.grey}>{review.timestamp}</div>
-          <div className={styles.orange}>TBD Verified {review.verifiedPurchase}</div>
-          <div>{review.text}</div>
-          <br></br>
-          <div className={styles.grey}>{review.numHelpful} people found this helpful</div>
+          <div className={styles.grey}>{moment(review.timestamp).format('MMMM DD, YYYY')}</div>
+          <div className={styles.orange}><b>{isVerified}</b></div>
+          <p>{review.text}</p>
+          <p className={styles.grey}>{review.numHelpful} people found this helpful</p>
           <div><button>Helpful</button> <a className={styles.grey}>    Comment    |     Report Abuse   </a></div>
           <br></br>
           <br></br>
