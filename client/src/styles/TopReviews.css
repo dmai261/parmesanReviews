@@ -1,5 +1,6 @@
 :local .blue {
   color: #2D83E0;
+  font-size: 1.3vmin;
 }
 
 :local .button {

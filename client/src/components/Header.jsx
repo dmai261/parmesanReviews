@@ -18,7 +18,6 @@ class Header extends React.Component {
         return review.stars;
       }).reduce((accumulator, currentValue) => accumulator + currentValue) / reviews.length;
     }
-
     const starArr = this.props.renderStarRating(avgRating, 2);
 
     return (
@@ -28,7 +27,7 @@ class Header extends React.Component {
         <div className={styles.container}>
           <div className={styles.blueSmall}>{avgRating} out of 5 stars</div><img className={styles.arrowDown} src='./img/arrowDown.png'></img>
         </div>
-        <br></br>
+        <div className={styles.gold}>HISTOGRAM HERE</div>
         <div className={styles.gold}>HISTOGRAM HERE</div>
         <div className={styles.gold}>HISTOGRAM HERE</div>
         <div className={styles.gold}>HISTOGRAM HERE</div>
