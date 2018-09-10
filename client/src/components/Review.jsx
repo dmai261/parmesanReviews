@@ -4,11 +4,17 @@ import styles from '../styles/Review.css';
 class Review extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
   render() {
     const { review } = this.props;
+
+    // make some users anonymous randomly
+    let { username } = review;
+    if (review.numHelpful % 5 === 0) {
+      username = 'Amazon Customer';
+    }
+
     let isVerified = '';
     if (review.verifiedPurchase) {
       isVerified = 'Verified Purchase';
@@ -18,7 +24,7 @@ class Review extends React.Component {
     return (
       <React.Fragment>
         <div className={styles.review}>
-          <div className={styles.profileContainer}><img className={styles.profile} src='./img/profile.jpg'></img> {review.username}</div>
+          <div className={styles.profileContainer}><img className={styles.profile} src='./img/profile.jpg'></img> {username}</div>
           <div><a className={styles.gold}><b>{starArr}</b> </a><b>{review.title}</b></div>
           <div className={styles.grey}>{moment(review.timestamp).format('MMMM DD, YYYY')}</div>
           <div className={styles.orange}><b>{isVerified}</b></div>
