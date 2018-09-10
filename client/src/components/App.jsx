@@ -10,7 +10,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       reviews: [],
-      currentProductId: 50,
+      currentProductId: 1,
     };
   }
 

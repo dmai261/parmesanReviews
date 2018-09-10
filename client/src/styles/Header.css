@@ -56,7 +56,7 @@
 }
 
 :local .blueFlex {
-  color: #2D83E0;
+  color: #0072D0;
   white-space: nowrap;
   font-size: 1.5vmin;
   padding-left: 1vmin;
@@ -111,7 +111,7 @@
 }
 
 :local .blueFlexRight {
-  color: #2D83E0;
+  color: #0072D0;
   white-space: nowrap;
   font-size: 1.5vmin;
   padding-left: 1vmin;
