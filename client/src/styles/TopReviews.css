@@ -1,0 +1,14 @@
+:local .blue {
+  color: #2D83E0;
+}
+
+:local .button {
+  height: 3vmin;
+  width: 20vmin;
+  font-size: 1.25vmin;
+}
+
+:local .blueArrowRight{
+  height: 2vmin;
+  width: 2vmin;
+}

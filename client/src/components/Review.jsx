@@ -1,5 +1,6 @@
 import React from 'react';
-
+const moment = require('moment');
+import styles from '../styles/Review.css';
 class Review extends React.Component {
   constructor(props) {
     super(props);
@@ -8,20 +9,25 @@ class Review extends React.Component {
 
   render() {
     const { review } = this.props;
+    let isVerified = '';
+    if (review.verifiedPurchase) {
+      isVerified = 'Verified Purchase';
+    }
+    const starArr = this.props.renderStarRating(review.stars, 1.5);
+
     return (
       <React.Fragment>
-        <br></br>
-        <div>%PIC% {review.username}</div>
-        <br></br>
-        <div>***** <b>{review.title}</b></div>
-        <div>{review.timestamp}</div>
-        <div>Verified? {review.verifiedPurchase}</div>
-        <div>{review.text}</div>
-        <br></br>
-        <div>{review.numHelpful} people found this helpful</div>
-        <br></br>
-        <div><button>Helpful</button> Comment Report Abuse</div>
-        <br></br>
+        <div className={styles.review}>
+          <div className={styles.profileContainer}><img className={styles.profile} src='./img/profile.jpg'></img> {review.username}</div>
+          <div><a className={styles.gold}><b>{starArr}</b> </a><b>{review.title}</b></div>
+          <div className={styles.grey}>{moment(review.timestamp).format('MMMM DD, YYYY')}</div>
+          <div className={styles.orange}><b>{isVerified}</b></div>
+          <p className={styles.text}>{review.text}</p>
+          <p className={styles.grey}>{review.numHelpful} people found this helpful</p>
+          <div className={styles.actionContainer}><button className={styles.buttonFlex}>Helpful</button> <a className={styles.lightGreyFlex}>|</a><a className={styles.greyFlex}>Comment</a><a className={styles.lightGreyFlex}>|</a><a className={styles.greyFlex}>Report Abuse</a></div>
+          <br></br>
+          <br></br>
+        </div>
       </React.Fragment>
     );
   }

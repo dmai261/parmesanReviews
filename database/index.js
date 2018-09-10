@@ -48,8 +48,8 @@ class Database {
         reviewId: reviewsCounter,
         username: faker.internet.userName(),
         stars: helpers.getRandomInt(6),
-        title: faker.lorem.words(),
-        text: faker.lorem.paragraph(),
+        title: faker.lorem.sentence(),
+        text: faker.lorem.paragraphs(),
         timestamp: faker.date.past(),
         numHelpful: helpers.getRandomInt(1000),
         verifiedPurchase: Math.random() < 0.5,
@@ -84,7 +84,7 @@ class Database {
     this.db = mongoose.connection;
     this.db.on('error', console.error.bind(console, 'db connection error:'));
     this.db.once('open', () => {
-      console.log("connected to mLab...");
+      console.log("connected to mongo...");
     });
   }
 
@@ -94,7 +94,7 @@ class Database {
     this.db = mongoose.connection;
     this.db.on('error', console.error.bind(console, 'db connection error:'));
     this.db.once('open', () => {
-      console.log("connected to mLab...");
+      console.log("connected to mongo...");
       this.createFakeData();
     });
   }

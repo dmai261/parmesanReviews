@@ -9,20 +9,41 @@ class Header extends React.Component {
   }
 
   render() {
+    const state = this.props.getState();
+    const { reviews } = state;
+
+    let avgRating;
+    if (reviews.length > 0) {
+      avgRating = reviews.map((review, index) => {
+        return review.stars;
+      }).reduce((accumulator, currentValue) => accumulator + currentValue) / reviews.length;
+    }
+
+    const starArr = this.props.renderStarRating(avgRating, 2);
+
     return (
       <React.Fragment>
-        <h2 className={styles.test}>Customer reviews</h2>
-        <h3>***** 2,055</h3>
-        <p>HISTOGRAM HERE</p>
-        <h4>See all 2,055 customer reviews ></h4>
-        <h3>Rated by feature</h3>
-        <h4 className={styles.test2}>Easy to assemble</h4>
-        <p>*****</p>
-        <p>4.8 out of 5 stars</p>
+        <h3 className={styles.border}>Customer reviews</h3>
+        <div><a className={styles.gold}><b>{starArr}</b></a><a className={styles.blueLarge}> {reviews.length}</a></div>
+        <div className={styles.container}>
+          <div className={styles.blueSmall}>{avgRating} out of 5 stars</div><img className={styles.arrowDown} src='./img/arrowDown.png'></img>
+        </div>
         <br></br>
+        <div className={styles.gold}>HISTOGRAM HERE</div>
+        <div className={styles.gold}>HISTOGRAM HERE</div>
+        <div className={styles.gold}>HISTOGRAM HERE</div>
+        <div className={styles.gold}>HISTOGRAM HERE</div>
+        <div className={styles.container}>
+          <p className={styles.blueSmall}>See all {reviews.length} customer reviews</p><img className={styles.blueArrowRight} src='./img/blueArrowRight.png'></img>
+        </div>
       </React.Fragment>
     );
   }
 }
 
 export default Header;
+
+/*
+example data
+{"_id":"5b918722d4a71c1897abb02f","productId":37,"reviewId":368,"username":"Parker_Nader66","stars":1,"title":"est dolore ducimus","text":"Vel molestias consequatur voluptatum vero labore dicta repellendus aut corporis. Et cupiditate minus nam. Perspiciatis dolorem omnis provident.","timestamp":"2018-02-01T17:26:28.993Z","numHelpful":965,"verifiedPurchase":true,"imageUrl":"http://lorempixel.com/640/480","__v":0}
+*/

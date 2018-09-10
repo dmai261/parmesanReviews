@@ -1,3 +1,41 @@
-:local .test {
-    /* color: gold; */
+:local .blue {
+    font-size: 1.5vmin;
+    color: #2D83E0;
 }
+
+:local .mentionItem {
+    font-size: 1.5vmin;
+    background-color: #D6E7E9;
+    border-bottom: 1px solid black;
+    padding-left: 2vmin;
+    padding-right: 2vmin;
+    height: 3vmin;
+    line-height: 3vmin;
+    text-align: center;
+    vertical-align: middle;
+    margin: .5vmin;
+}
+
+:local .mentionContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 75vmin;
+}
+
+:local h4 {
+    font-size: 1.75vmin;
+    padding-bottom: 0vmin;
+    margin-bottom: 1.25vmin;
+}
+
+:local .doubleArrowDown{
+    height: 2vmin;
+    width: 2vmin;
+}
+
+:local .container {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    padding-bottom: .5vmin;
+  }

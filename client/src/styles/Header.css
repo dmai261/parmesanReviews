@@ -1,3 +1,47 @@
-:local .test {
-  /* color: blue; */
+:local .blue {
+  color: #2D83E0;
+}
+
+:local .gold {
+  color: #FCB80D;
+}
+
+:local .blueSmall {
+  color: #2D83E0;
+  font-size: 1.5vmin;
+}
+
+:local .blueLarge {
+  color: #2D83E0;
+  font-size: 2vmin;
+}
+
+:local h3 {
+  font-size: 2.25vmin;
+  padding-bottom: 0vmin;
+  margin-bottom: 1.25vmin;
+}
+
+:local .blueArrowRight {
+  height: 2vmin;
+  width: 2vmin;
+}
+
+:local .arrowDown {
+  height: 2vmin;
+  width: 2vmin;
+  transform: translateY(.25vmin);
+}
+
+:local .border {
+  border-width: 0;
+  border-top: 1px solid #e7e7e7;
+  padding-top: 1.5vmin;
+}
+
+:local .container {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  padding-bottom: .5vmin;
 }

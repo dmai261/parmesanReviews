@@ -1,6 +1,6 @@
 import React from 'react';
 import Review from './Review.jsx';
-
+import styles from '../styles/TopReviews.css';
 class TopReviews extends React.Component {
   constructor(props) {
     super(props);
@@ -12,15 +12,15 @@ class TopReviews extends React.Component {
     const reviewElements = reviews.map((review, index) => {
       // TBD toggle show reviews all on button press
       if (index < 5) {
-        return <Review key={index} review={review} />;
+        return <Review key={index} review={review} renderStarRating={this.props.renderStarRating} />;
       }
     });
     return (
       <React.Fragment>
-        <h3>Top customer reviews</h3>
+        <h4>Top customer reviews</h4>
         {reviewElements}
-        <p>See all 10 reviews > </p>
-        <button>Write a customer review</button>
+        <div className={styles.blue}>See all {reviews.length} reviews <img className={styles.blueArrowRight} src='./img/blueArrowRight.png'></img></div><br></br>
+        <button className={styles.button}>Write a customer review</button>
       </React.Fragment>
     );
   }

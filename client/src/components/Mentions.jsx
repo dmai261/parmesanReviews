@@ -4,15 +4,29 @@ import styles from '../styles/Mentions.css';
 class Mentions extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    // };
   }
+
   render() {
+    const state = this.props.getState();
+    const { reviews } = state;
     return (
       <React.Fragment>
-        <h3 className={styles.test}>Read reviews that mention</h3>
-        <p>MENTIONS HERE</p>
-        <p>^ See more</p>
+        <h4>Read reviews that mention</h4>
+        <div className={styles.mentionContainer}>
+          <div className={styles.mentionItem}>mention</div>
+          <div className={styles.mentionItem}>mentionmention</div>
+          <div className={styles.mentionItem}>mention</div>
+          <div className={styles.mentionItem}>mention</div>
+          <div className={styles.mentionItem}>mention</div>
+          <div className={styles.mentionItem}>mentionmention</div>
+          <div className={styles.mentionItem}>meon</div>
+          <div className={styles.mentionItem}>mentmention</div>
+          <div className={styles.mentionItem}>mention</div>
+          <div className={styles.mentionItem}>mtion</div>
+        </div>
+        <div className={styles.container}>
+          <img className={styles.doubleArrowDown} src='./img/doubleArrowDown.png'></img><p className={styles.blue}>See more</p>
+        </div>
       </React.Fragment>
     );
   }

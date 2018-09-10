@@ -1,0 +1,79 @@
+:local .review {
+  font-size: 1.5vmin;
+  line-height: 2.25vmin;
+}
+
+:local .grey {
+  color: gray;
+}
+
+:local .orange {
+  font-size: 1.25vmin;
+  color: #C15926;
+}
+
+:local .gold {
+  color: #FCB80D;
+}
+
+:local .profile {
+  height: 3.5vmin;
+  width: 3.5vmin;
+  padding-right: 1.25vmin;
+}
+
+:local .profileContainer {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  padding-bottom: .5vmin;
+}
+
+:local .button {
+  height: 2.75vmin;
+  width: 10vmin;
+  font-size: 1.25vmin;
+}
+
+:local .text {
+  margin-top: .5vmin;
+  margin-bottom: .5vmin;
+}
+
+:local p {
+  margin-top: .75vmin;
+  margin-bottom: .75vmin;
+}
+
+:local .actionContainer {
+  display: flex;
+  width: 45vmin;
+  justify-content: flex-start;
+}
+
+:local .greyFlex {
+  color: gray;
+  flex: 0;
+  flex-shrink: 0;
+  white-space: nowrap;
+  padding-left: 1vmin;
+  padding-right: 1vmin;
+  text-align: center;
+}
+
+:local .lightGreyFlex {
+  color: rgb(207, 207, 207);
+  flex: 0;
+  flex-shrink: 0;
+  white-space: nowrap;
+  padding-left: 1vmin;
+  padding-right: 1vmin;
+  text-align: center;
+}
+
+:local .buttonFlex {
+  height: 2.75vmin;
+  max-width: 10vmin;
+  font-size: 1.25vmin;
+  flex: 1;
+}
