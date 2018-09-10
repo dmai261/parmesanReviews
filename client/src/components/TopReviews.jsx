@@ -12,7 +12,7 @@ class TopReviews extends React.Component {
     const reviewElements = reviews.map((review, index) => {
       // TBD toggle show reviews all on button press
       if (index < 5) {
-        return <Review key={index} review={review} />;
+        return <Review key={index} review={review} renderStarRating={this.props.renderStarRating} />;
       }
     });
     return (

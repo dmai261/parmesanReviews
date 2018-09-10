@@ -12,17 +12,19 @@ class Header extends React.Component {
     const state = this.props.getState();
     const { reviews } = state;
 
-    let avgRating = 4.5;
+    let avgRating;
     if (reviews.length > 0) {
       avgRating = reviews.map((review, index) => {
         return review.stars;
       }).reduce((accumulator, currentValue) => accumulator + currentValue) / reviews.length;
     }
 
+    const starArr = this.props.renderStarRating(avgRating, 2);
+
     return (
       <React.Fragment>
         <h3>Customer reviews</h3>
-        <div><a className={styles.gold}><b>*****</b></a> <a className={styles.blueLarge}>{reviews.length}</a></div>
+        <div><a className={styles.gold}><b>{starArr}</b></a><a className={styles.blueLarge}> {reviews.length}</a></div>
         <div className={styles.blueSmall}>{avgRating} out of 5 stars<img className={styles.arrowDown} src='./img/arrowDown.png'></img></div>
         <br></br>
         <div className={styles.gold}>HISTOGRAM HERE</div>

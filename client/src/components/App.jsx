@@ -11,7 +11,7 @@ class App extends React.Component {
     this.serverUrl = 'http://localhost:1337';
     this.state = {
       reviews: [],
-      currentProductId: 1,
+      currentProductId: 25,
     };
   }
 
@@ -34,6 +34,35 @@ class App extends React.Component {
     });
   }
 
+  renderStarRating(rating, vmin) {
+    // TBD rating is converted to x/5 to x*20/100 so floors work
+
+    var style = {
+      width: `${vmin}vmin`,
+      height: `${vmin}vmin`,
+    };
+
+    const numFullStars = Math.floor(rating);
+    const numEmptyStars = 5 - numFullStars;
+    const remainder = rating - numFullStars;
+    let hasHalf = remainder >= .25;
+
+    let ratingArr = new Array(5).fill('');
+
+    const starArray = ratingArr.map((element, index) => {
+      if (index + 1 <= numFullStars) {
+        return <img key='index' style={style} src='./img/fullStar.png'></img>;
+      } else if (hasHalf) {
+        hasHalf = false;
+        return <img key='index' style={style} src='./img/halfStar.png'></img>;
+      } else {
+        return <img key='index' style={style} src='./img/emptyStar.png'></img>;
+      }
+    });
+
+    return starArray;
+  }
+
   getState() {
     return this.state;
   }
@@ -43,9 +72,9 @@ class App extends React.Component {
     const stringState = JSON.stringify(state.reviews[0]);
     return (
       <React.Fragment>
-        <Header getState={this.getState.bind(this)} />
+        <Header getState={this.getState.bind(this)} renderStarRating={this.renderStarRating.bind(this)} />
         <Mentions getState={this.getState.bind(this)} />
-        <TopReviews getState={this.getState.bind(this)} />
+        <TopReviews getState={this.getState.bind(this)} renderStarRating={this.renderStarRating.bind(this)} />
       </React.Fragment>
     );
   }

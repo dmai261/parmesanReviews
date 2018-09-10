@@ -13,11 +13,13 @@ class Review extends React.Component {
     if (review.verifiedPurchase) {
       isVerified = 'Verified Purchase';
     }
+    const starArr = this.props.renderStarRating(review.stars, 1.5);
+
     return (
       <React.Fragment>
         <div className={styles.review}>
           <div className={styles.profileContainer}><img className={styles.profile} src='./img/profile.jpg'></img> {review.username}</div>
-          <div><a className={styles.gold}><b>*****</b> </a><b>{review.title}</b></div>
+          <div><a className={styles.gold}><b>{starArr}</b> </a><b>{review.title}</b></div>
           <div className={styles.grey}>{moment(review.timestamp).format('MMMM DD, YYYY')}</div>
           <div className={styles.orange}><b>{isVerified}</b></div>
           <p className={styles.text}>{review.text}</p>

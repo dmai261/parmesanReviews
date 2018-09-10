@@ -24,7 +24,7 @@ class Mentions extends React.Component {
           <div className={styles.mentionItem}>mention</div>
           <div className={styles.mentionItem}>mtion</div>
         </div>
-        <p className={styles.blue}><img className={styles.doubleArrowDown} src='./img/doubleArrowDown.png'></img> See more</p>
+        <p className={styles.blue}><img className={styles.doubleArrowDown} src='./img/doubleArrowDown.png'></img>See more</p>
       </React.Fragment>
     );
   }
