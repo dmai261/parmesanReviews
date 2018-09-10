@@ -8,7 +8,6 @@ import styles from '../styles/main.css';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.serverUrl = 'http://localhost:1337';
     this.state = {
       reviews: [],
       currentProductId: 25,
@@ -20,7 +19,7 @@ class App extends React.Component {
     const settings = {
       async: true,
       crossDomain: true,
-      url: `${this.serverUrl}/reviews/${this.state.currentProductId}`,
+      url: `/reviews/${this.state.currentProductId}`,
       method: 'GET',
       headers: {
         'content-type': 'application/json',

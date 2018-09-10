@@ -4,9 +4,20 @@ import styles from '../styles/Header.css';
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    // };
   }
+
+  renderRatingHistogram(reviews) {
+    return (
+      <React.Fragment>
+        <div className={styles.gold}>HISTOGRAM HERE</div>
+        <div className={styles.gold}>HISTOGRAM HERE</div>
+        <div className={styles.gold}>HISTOGRAM HERE</div>
+        <div className={styles.gold}>HISTOGRAM HERE</div>
+        <div className={styles.gold}>HISTOGRAM HERE</div>
+      </React.Fragment>
+    )
+  }
+
 
   render() {
     const state = this.props.getState();
@@ -20,6 +31,10 @@ class Header extends React.Component {
     }
     const starArr = this.props.renderStarRating(avgRating, 2);
 
+
+    const histogram = this.renderRatingHistogram(reviews);
+
+
     return (
       <React.Fragment>
         <h3 className={styles.border}>Customer reviews</h3>
@@ -27,11 +42,7 @@ class Header extends React.Component {
         <div className={styles.container}>
           <div className={styles.blueSmall}>{avgRating} out of 5 stars</div><img className={styles.arrowDown} src='./img/arrowDown.png'></img>
         </div>
-        <div className={styles.gold}>HISTOGRAM HERE</div>
-        <div className={styles.gold}>HISTOGRAM HERE</div>
-        <div className={styles.gold}>HISTOGRAM HERE</div>
-        <div className={styles.gold}>HISTOGRAM HERE</div>
-        <div className={styles.gold}>HISTOGRAM HERE</div>
+        <div className={styles.histogram}>{histogram}</div>
         <div className={styles.container}>
           <p className={styles.blueSmall}>See all {reviews.length} customer reviews</p><img className={styles.blueArrowRight} src='./img/blueArrowRight.png'></img>
         </div>
