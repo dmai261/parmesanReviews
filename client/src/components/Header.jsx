@@ -7,14 +7,39 @@ class Header extends React.Component {
   }
 
   renderRatingHistogram(reviews) {
-    const ratingArr = new Array(5).fill('');
-    const histogram = ratingArr.map((ratingBucket, index) => {
+
+    /*
+    example data - reviews should be an array of objects like these
+    {"_id":"5b918722d4a71c1897abb02f","productId":37,"reviewId":368,"username":"Parker_Nader66","stars":1,"title":"est dolore ducimus","text":"Vel molestias consequatur voluptatum vero labore dicta repellendus aut corporis. Et cupiditate minus nam. Perspiciatis dolorem omnis provident.","timestamp":"2018-02-01T17:26:28.993Z","numHelpful":965,"verifiedPurchase":true,"imageUrl":"http://lorempixel.com/640/480","__v":0}
+    */
+
+    const ratings = reviews.map((reviewObject) => {
+      return reviewObject.stars;
+    })
+
+    const countedRatings = ratings.reduce((talliedRatings, rating) => {
+      if (rating in talliedRatings) {
+        talliedRatings[rating] += 1;
+      } else {
+        talliedRatings[rating] = 1;
+      }
+      return talliedRatings;
+    }, {});
+
+    const ratingBuckets = new Array(5).fill('');
+    const histogram = ratingBuckets.map((ratingBucket, index) => {
+      const currentStar = 5 - index;
+      const percentageOfRatings = (countedRatings[currentStar] / reviews.length) * 100 || 0;
+      const style = {
+        width: `${(percentageOfRatings / 100) * 24}vmin`,
+      }
       return (
         <React.Fragment>
           <div className={styles.histBarContainer}>
-            <a className={styles.blueFlex}>{5 - index} star</a>
-            <a className={styles.histBar}></a>
-            <a className={styles.blueFlex}>99%</a>
+            <a className={styles.blueFlex}>{currentStar} star</a>
+            <a style={style} className={styles.histBar}></a>
+            <a className={styles.histBarBackground}></a>
+            <a className={styles.blueFlexRight}>{percentageOfRatings}%</a>
             <br />
           </div>
         </React.Fragment>
