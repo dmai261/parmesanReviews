@@ -7,15 +7,20 @@ class Header extends React.Component {
   }
 
   renderRatingHistogram(reviews) {
-    return (
-      <React.Fragment>
-        <div className={styles.gold}>HISTOGRAM HERE</div>
-        <div className={styles.gold}>HISTOGRAM HERE</div>
-        <div className={styles.gold}>HISTOGRAM HERE</div>
-        <div className={styles.gold}>HISTOGRAM HERE</div>
-        <div className={styles.gold}>HISTOGRAM HERE</div>
-      </React.Fragment>
-    )
+    const ratingArr = new Array(5).fill('');
+    const histogram = ratingArr.map((ratingBucket, index) => {
+      return (
+        <React.Fragment>
+          <div className={styles.histBarContainer}>
+            <a className={styles.blueFlex}>{5 - index} star</a>
+            <a className={styles.histBar}>HISTOGRAM HERE</a>
+            <a className={styles.blueFlex}>99%</a>
+            <br />
+          </div>
+        </React.Fragment>
+      )
+    });
+    return histogram;
   }
 
 

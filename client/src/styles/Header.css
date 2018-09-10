@@ -45,3 +45,27 @@
   align-items: center;
   padding-bottom: .5vmin;
 }
+
+:local .histBarContainer {
+  display: flex;
+  padding-bottom: .5vmin;
+  width: 25vmin;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+}
+
+:local .blueFlex {
+  color: #2D83E0;
+  white-space: nowrap;
+  font-size: 1.5vmin;
+  flex: 0;
+  padding-left: 1vmin;
+  padding-right: 1vmin;
+}
+
+:local .histBar {
+  color: #FCB80D;
+  white-space: nowrap;
+  flex: 0;
+}
