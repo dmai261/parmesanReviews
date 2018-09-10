@@ -44,3 +44,36 @@
   margin-top: .75vmin;
   margin-bottom: .75vmin;
 }
+
+:local .actionContainer {
+  display: flex;
+  width: 45vmin;
+  justify-content: flex-start;
+}
+
+:local .greyFlex {
+  color: gray;
+  flex: 0;
+  flex-shrink: 0;
+  white-space: nowrap;
+  padding-left: 1vmin;
+  padding-right: 1vmin;
+  text-align: center;
+}
+
+:local .lightGreyFlex {
+  color: rgb(207, 207, 207);
+  flex: 0;
+  flex-shrink: 0;
+  white-space: nowrap;
+  padding-left: 1vmin;
+  padding-right: 1vmin;
+  text-align: center;
+}
+
+:local .buttonFlex {
+  height: 2.75vmin;
+  max-width: 10vmin;
+  font-size: 1.25vmin;
+  flex: 1;
+}
