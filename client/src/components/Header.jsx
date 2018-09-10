@@ -13,7 +13,7 @@ class Header extends React.Component {
         <React.Fragment>
           <div className={styles.histBarContainer}>
             <a className={styles.blueFlex}>{5 - index} star</a>
-            <a className={styles.histBar}>HISTOGRAM HERE</a>
+            <a className={styles.histBar}></a>
             <a className={styles.blueFlex}>99%</a>
             <br />
           </div>
@@ -36,9 +36,7 @@ class Header extends React.Component {
     }
     const starArr = this.props.renderStarRating(avgRating, 2);
 
-
     const histogram = this.renderRatingHistogram(reviews);
-
 
     return (
       <React.Fragment>
@@ -47,7 +45,7 @@ class Header extends React.Component {
         <div className={styles.container}>
           <div className={styles.blueSmall}>{avgRating} out of 5 stars</div><img className={styles.arrowDown} src='./img/arrowDown.png'></img>
         </div>
-        <div className={styles.histogram}>{histogram}</div>
+        <div className={styles.histOuterContainer}><div className={styles.histogram}>{histogram}</div><div className={styles.shareContainer}><a className={styles.shareText}>Share your thoughts with other customers</a><br /><button className={styles.button}>Write a customer review</button></div></div>
         <div className={styles.container}>
           <p className={styles.blueSmall}>See all {reviews.length} customer reviews</p><img className={styles.blueArrowRight} src='./img/blueArrowRight.png'></img>
         </div>
