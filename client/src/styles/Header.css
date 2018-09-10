@@ -30,4 +30,18 @@
 :local .arrowDown {
   height: 2vmin;
   width: 2vmin;
+  transform: translateY(.25vmin);
+}
+
+:local .border {
+  border-width: 0;
+  border-top: 1px solid #e7e7e7;
+  padding-top: 1.5vmin;
+}
+
+:local .container {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  padding-bottom: .5vmin;
 }

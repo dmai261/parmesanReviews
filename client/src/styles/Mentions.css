@@ -32,3 +32,10 @@
     height: 2vmin;
     width: 2vmin;
 }
+
+:local .container {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    padding-bottom: .5vmin;
+  }
