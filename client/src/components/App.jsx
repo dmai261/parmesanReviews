@@ -35,8 +35,6 @@ class App extends React.Component {
   }
 
   renderStarRating(rating, vmin) {
-    // TBD rating is converted to x/5 to x*20/100 so floors work
-
     var style = {
       width: `${vmin}vmin`,
       height: `${vmin}vmin`,
