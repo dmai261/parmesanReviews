@@ -30,6 +30,17 @@
 }
 
 :local .button {
-  height: 3.5vmin;
-  width: 12vmin;
+  height: 2.75vmin;
+  width: 10vmin;
+  font-size: 1.25vmin;
+}
+
+:local .text {
+  margin-top: .5vmin;
+  margin-bottom: .5vmin;
+}
+
+:local p {
+  margin-top: .75vmin;
+  margin-bottom: .75vmin;
 }

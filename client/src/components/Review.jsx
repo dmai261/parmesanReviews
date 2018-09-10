@@ -20,7 +20,7 @@ class Review extends React.Component {
           <div><a className={styles.gold}><b>*****</b> </a><b>{review.title}</b></div>
           <div className={styles.grey}>{moment(review.timestamp).format('MMMM DD, YYYY')}</div>
           <div className={styles.orange}><b>{isVerified}</b></div>
-          <p>{review.text}</p>
+          <p className={styles.text}>{review.text}</p>
           <p className={styles.grey}>{review.numHelpful} people found this helpful</p>
           <div><button className={styles.button}>Helpful</button> <a className={styles.grey}> |    Comment    |     Report Abuse   </a></div>
           <br></br>

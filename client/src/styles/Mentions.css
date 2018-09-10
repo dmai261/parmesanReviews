@@ -21,3 +21,14 @@
     flex-wrap: wrap;
     width: 75vmin;
 }
+
+:local h4 {
+    font-size: 1.75vmin;
+    padding-bottom: 0vmin;
+    margin-bottom: 1.25vmin;
+}
+
+:local .doubleArrowDown{
+    height: 2vmin;
+    width: 2vmin;
+}
