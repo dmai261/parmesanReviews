@@ -77,3 +77,9 @@
   font-size: 1.25vmin;
   flex: 1;
 }
+
+:local .lightGreyPad {
+  color: rgb(207, 207, 207);
+  padding-left: 1vmin;
+  padding-right: 1vmin;
+}
