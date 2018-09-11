@@ -17,6 +17,7 @@
   "dependencies": {
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "animate.css": "^3.7.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-loader": "^8.0.2",
@@ -36,7 +37,9 @@
     "nodemon": "^1.18.4",
     "puppeteer": "^1.8.0",
     "react": "^16.4.2",
+    "react-animate-on-scroll": "^2.1.5",
     "react-dom": "^16.4.2",
+    "scrolltrigger-classes": "^0.3.6",
     "style-loader": "^0.23.0",
     "webpack": "^4.17.2"
   },

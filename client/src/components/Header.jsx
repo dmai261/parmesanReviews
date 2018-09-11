@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 import styles from '../styles/Header.css';
 
 class Header extends React.Component {
@@ -45,9 +46,9 @@ class Header extends React.Component {
         </React.Fragment>
       )
     });
+
     return histogram;
   }
-
 
   render() {
     const state = this.props.getState();

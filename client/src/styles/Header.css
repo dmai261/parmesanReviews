@@ -65,7 +65,6 @@
 }
 
 :local .histBar {
-  display: absolute;
   background: linear-gradient(to bottom,#ffce00,#ffa700);
   background-color: #ffce00;
   height: 2.25vmin;
@@ -118,4 +117,21 @@
   padding-right: 1vmin;
   width: 5vmin;
   text-align: right;
+}
+
+/* TBD animate on scroll - hist bar animation */
+:local .histBar {
+  -webkit-animation-name: stretchInLeft;
+  -webkit-animation-duration: .5s;
+  -webkit-animation-delay: 0;
+  -webkit-animation-timing-function: ease-in;
+
+  animation-name: stretchInLeft;
+  animation-duration: .5s;
+  animation-delay: 0;
+  timing-function: ease-in;
+}
+
+@keyframes stretchInLeft {
+  from { width: 0%; }
 }
