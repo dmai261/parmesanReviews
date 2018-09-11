@@ -32,7 +32,8 @@ class Header extends React.Component {
       const currentStar = 5 - index;
       const percentageOfRatings = (countedRatings[currentStar] / reviews.length) * 100 || 0;
       const style = {
-        width: `${(percentageOfRatings / 100) * 24}vmin`,
+        // TBD fix hardcoded arbitrary scalar 44
+        width: `${(percentageOfRatings / 100) * 44}vmin`,
       }
       return (
         <React.Fragment>
