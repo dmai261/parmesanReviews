@@ -31,7 +31,6 @@
     "jquery": "^3.3.1",
     "math.js": "^1.1.43",
     "moment": "^2.22.2",
-    "momentjs": "^2.0.0",
     "mongoose": "^5.2.13",
     "morgan": "^1.9.0",
     "nodemon": "^1.18.4",
