@@ -8,10 +8,9 @@ import styles from '../styles/main.css';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.serverUrl = 'http://localhost:1337';
     this.state = {
       reviews: [],
-      currentProductId: 25,
+      currentProductId: 1,
     };
   }
 
@@ -20,7 +19,7 @@ class App extends React.Component {
     const settings = {
       async: true,
       crossDomain: true,
-      url: `${this.serverUrl}/reviews/${this.state.currentProductId}`,
+      url: `/reviews/${this.state.currentProductId}`,
       method: 'GET',
       headers: {
         'content-type': 'application/json',
@@ -35,8 +34,6 @@ class App extends React.Component {
   }
 
   renderStarRating(rating, vmin) {
-    // TBD rating is converted to x/5 to x*20/100 so floors work
-
     var style = {
       width: `${vmin}vmin`,
       height: `${vmin}vmin`,

@@ -45,3 +45,93 @@
   align-items: center;
   padding-bottom: .5vmin;
 }
+
+:local .histBarContainer {
+  display: flex;
+  padding-bottom: .3vmin;
+  width: 25vmin;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+}
+
+:local .blueFlex {
+  color: #0072D0;
+  white-space: nowrap;
+  font-size: 1.5vmin;
+  padding-left: 1vmin;
+  padding-right: 1vmin;
+  width: 5vmin;
+}
+
+:local .histBar {
+  background: linear-gradient(to bottom,#ffce00,#ffa700);
+  background-color: #ffce00;
+  height: 2.25vmin;
+  border-radius: 1px;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.4), inset 0 0 0 1px rgba(0,0,0,.1);
+}
+
+:local .histBarBackground {
+  background: linear-gradient(to bottom,#eee,#f6f6f6);
+  background-color: #f3f3f3;
+  height: 2.25vmin;
+  width: 24vmin;
+  border-radius: 1px;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.4), inset 0 0 0 1px rgba(0,0,0,.1);
+}
+
+:local .button {
+  height: 3.5vmin;
+  width: 20vmin;
+  margin-top: 2.5vmin;
+  font-size: 1.5vmin;
+}
+
+:local .shareContainer {
+  padding-left: 4vmin;
+  font-size: 1.5vmin;
+}
+
+:local .histOuterContainer {
+  margin: auto;
+  display: flex;
+  align-content: flex-start;
+  padding-bottom: .5vmin;
+  padding-top: .5vmin;
+}
+
+:local .shareText {
+  margin-bottom: 1.5vmin;
+}
+
+:local .histogram {
+  width: 30vmin;
+}
+
+:local .blueFlexRight {
+  color: #0072D0;
+  white-space: nowrap;
+  font-size: 1.5vmin;
+  padding-left: 1vmin;
+  padding-right: 1vmin;
+  width: 5vmin;
+  text-align: right;
+}
+
+/* TBD animate on scroll - hist bar animation */
+:local .histBar {
+  -webkit-animation-name: stretchInLeft;
+  -webkit-animation-duration: .5s;
+  -webkit-animation-delay: 0;
+  -webkit-animation-timing-function: ease-in;
+
+  animation-name: stretchInLeft;
+  animation-duration: .5s;
+  animation-delay: 0;
+  timing-function: ease-in;
+}
+
+@keyframes stretchInLeft {
+  from { width: 0%; }
+}

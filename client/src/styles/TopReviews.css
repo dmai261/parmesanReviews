@@ -1,5 +1,6 @@
 :local .blue {
   color: #2D83E0;
+  font-size: 1.3vmin;
 }
 
 :local .button {
@@ -11,4 +12,11 @@
 :local .blueArrowRight{
   height: 2vmin;
   width: 2vmin;
+}
+
+:local .container {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  padding-bottom: 1.5vmin;
 }

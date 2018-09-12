@@ -26,7 +26,7 @@
   margin: auto;
   display: flex;
   align-items: center;
-  padding-bottom: .5vmin;
+  padding-bottom: .75vmin;
 }
 
 :local .button {
@@ -49,6 +49,7 @@
   display: flex;
   width: 45vmin;
   justify-content: flex-start;
+  align-items: center;
 }
 
 :local .greyFlex {
@@ -76,4 +77,10 @@
   max-width: 10vmin;
   font-size: 1.25vmin;
   flex: 1;
+}
+
+:local .lightGreyPad {
+  color: rgb(207, 207, 207);
+  padding-left: 1vmin;
+  padding-right: 1vmin;
 }
