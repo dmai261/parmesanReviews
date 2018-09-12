@@ -5,7 +5,7 @@
   "author": "",
   "license": "",
   "engines": {
-    "node": ">=6.13.0"
+    "nodejs": ">=8.10.0"
   },
   "scripts": {
     "react-dev": "webpack --watch --display-error-details",
@@ -20,7 +20,8 @@
     "@babel/preset-react": "^7.0.0",
     "ajv": "^6.5.3",
     "babel-cli": "^6.26.0",
-    "babel-core": "^7.0.0-bridge.0",
+    "babel-core": "^7.0.0-0",
+    "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.2",
     "body-parser": "^1.18.3",
     "css-loader": "^1.0.0",
@@ -43,6 +44,7 @@
   },
   "devDependencies": {
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "regenerator-runtime": "^0.12.1",
     "webpack-cli": "^3.1.0"
   }
 }
