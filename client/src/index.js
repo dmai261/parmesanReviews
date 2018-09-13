@@ -1,4 +1,3 @@
-// import App from './components/App.jsx';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App.jsx';
@@ -10,10 +9,12 @@ class Client {
   }
 
   init() {
-    ReactDOM.render(<App />, this.domElement);
+    if (this.domElement) {
+      ReactDOM.render(<App />, this.domElement);
+    }
   }
 }
 
 const client = new Client();
 
-module.exports = Client;
+module.exports = client;
