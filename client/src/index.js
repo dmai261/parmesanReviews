@@ -15,3 +15,5 @@ class Client {
 }
 
 const client = new Client();
+
+module.exports = Client;

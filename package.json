@@ -54,7 +54,8 @@
       "!**/node_modules/**",
       "!**/vendor/**",
       "**/server/*.{js}",
-      "**/database/*.{js}"
+      "**/database/*.{js}",
+      "**/client/src/*.{js}"
     ]
   }
 }
