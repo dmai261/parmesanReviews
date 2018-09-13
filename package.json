@@ -5,7 +5,7 @@
   "author": "",
   "license": "",
   "engines": {
-    "node": ">=6.13.0"
+    "nodejs": ">=8.10.0"
   },
   "scripts": {
     "react-dev": "webpack --watch --display-error-details",
@@ -15,11 +15,13 @@
     "seed": "node ./database/seed.js"
   },
   "dependencies": {
+    "@babel/core": "^7.0.1",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "animate.css": "^3.7.0",
+    "ajv": "^6.5.3",
     "babel-cli": "^6.26.0",
-    "babel-core": "^7.0.0-bridge.0",
+    "babel-core": "^7.0.0-0",
+    "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.2",
     "body-parser": "^1.18.3",
     "css-loader": "^1.0.0",
@@ -31,20 +33,28 @@
     "jquery": "^3.3.1",
     "math.js": "^1.1.43",
     "moment": "^2.22.2",
-    "momentjs": "^2.0.0",
     "mongoose": "^5.2.13",
     "morgan": "^1.9.0",
     "nodemon": "^1.18.4",
     "puppeteer": "^1.8.0",
     "react": "^16.4.2",
-    "react-animate-on-scroll": "^2.1.5",
     "react-dom": "^16.4.2",
-    "scrolltrigger-classes": "^0.3.6",
     "style-loader": "^0.23.0",
     "webpack": "^4.17.2"
   },
   "devDependencies": {
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "regenerator-runtime": "^0.12.1",
     "webpack-cli": "^3.1.0"
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverageFrom": [
+      "**/*.{jsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**",
+      "**/server/*.{js}",
+      "**/database/*.{js}"
+    ]
   }
 }

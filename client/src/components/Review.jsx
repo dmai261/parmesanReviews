@@ -30,7 +30,13 @@ class Review extends React.Component {
           <a className={styles.lightGreyPad}> | </a><a className={styles.orange}><b>{isVerified}</b></a>
           <p className={styles.text}>{review.text}</p>
           <p className={styles.grey}>{review.numHelpful} people found this helpful</p>
-          <div className={styles.actionContainer}><button className={styles.buttonFlex}>Helpful</button><a className={styles.lightGreyFlex}>|</a><a className={styles.greyFlex}>Comment</a><a className={styles.lightGreyFlex}>|</a><a className={styles.greyFlex}>Report Abuse</a></div>
+          <div className={styles.actionContainer}>
+            <button className={styles.buttonFlex}>Helpful</button>
+            <a className={styles.lightGreyFlex}>|</a>
+            <a className={styles.greyFlex}>Comment</a>
+            <a className={styles.lightGreyFlex}>|</a>
+            <a className={styles.greyFlex}>Report Abuse</a>
+          </div>
           <br />
           <br />
         </div>

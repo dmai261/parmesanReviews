@@ -14,7 +14,7 @@ class Header extends React.Component {
     {"_id":"5b918722d4a71c1897abb02f","productId":37,"reviewId":368,"username":"Parker_Nader66","stars":1,"title":"est dolore ducimus","text":"Vel molestias consequatur voluptatum vero labore dicta repellendus aut corporis. Et cupiditate minus nam. Perspiciatis dolorem omnis provident.","timestamp":"2018-02-01T17:26:28.993Z","numHelpful":965,"verifiedPurchase":true,"imageUrl":"http://lorempixel.com/640/480","__v":0}
     */
 
-    const ratings = reviews.map((reviewObject) => {
+    const ratings = reviews.map((reviewObject, index) => {
       return reviewObject.stars;
     })
 
