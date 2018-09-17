@@ -16,10 +16,15 @@ class App extends React.Component {
 
   componentDidMount() {
     // pull query fron url
-    const newCurrentProductId = window.location.href.match(/(\?|\&)id=(\d\d?\d?\d?\d?\d?\d?\d?)/)[2];
-    this.setState({
-      currentProductId: newCurrentProductId,
-    });
+    let newCurrentProductId;
+    if (window.location.href.match(/(\?|\&)id=(\d\d?\d?\d?\d?\d?\d?\d?)/)) {
+      newCurrentProductId = window.location.href.match(/(\?|\&)id=(\d\d?\d?\d?\d?\d?\d?\d?)/)[2];
+      this.setState({
+        currentProductId: newCurrentProductId,
+      });
+    } else {
+      newCurrentProductId = 1;
+    }
 
     // TBD refactor ajax request to fetch/promises/await
     const settings = {
