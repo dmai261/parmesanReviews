@@ -6,21 +6,22 @@ class Review extends React.Component {
     super(props);
   }
 
+  handleHelpfulClick() {
+    this.props.incrementHelpfulness(this.props.review.reviewId);
+  }
+
   render() {
     const { review } = this.props;
-
     // make some users anonymous randomly
     let { username } = review;
     if (review.numHelpful % 5 === 0) {
       username = 'Amazon Customer';
     }
-
     let isVerified = '';
     if (review.verifiedPurchase) {
       isVerified = 'Verified Purchase';
     }
     const starArr = this.props.renderStarRating(review.stars, 1.5);
-
     return (
       <React.Fragment>
         <div className={styles.review}>
@@ -31,7 +32,7 @@ class Review extends React.Component {
           <p className={styles.text}>{review.text}</p>
           <p className={styles.grey}>{review.numHelpful} people found this helpful</p>
           <div className={styles.actionContainer}>
-            <button className={styles.buttonFlex}>Helpful</button>
+            <button className={styles.buttonFlex} onClick={this.handleHelpfulClick.bind(this)}>Helpful</button>
             <a className={styles.lightGreyFlex}>|</a>
             <a className={styles.greyFlex}>Comment</a>
             <a className={styles.lightGreyFlex}>|</a>

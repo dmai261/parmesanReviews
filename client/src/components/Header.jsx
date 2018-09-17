@@ -10,6 +10,7 @@ class Header extends React.Component {
   }
 
   componentDidMount() {
+    // check if inview and if so animate
     setInterval(() => {
       if ($('#scrollTarget').visible()) {
         // wildcard jquery selector
