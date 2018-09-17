@@ -38,4 +38,11 @@
     display: flex;
     align-items: center;
     padding-bottom: .5vmin;
-  }
+}
+
+:local .blue:hover {
+  color: #C15926 !important;
+  cursor: pointer;
+  text-decoration: underline;
+}
+

@@ -76,12 +76,14 @@ class Header extends React.Component {
 
     const histogram = this.renderRatingHistogram(reviews);
 
+    const ratingBlurb = `${avgRating} out of 5 stars`;
+
     return (
       <React.Fragment>
         <h3 className={styles.border}>Customer reviews</h3>
-        <div><a className={styles.gold}><b>{starArr}</b></a><a className={styles.blueLarge}> {reviews.length}</a></div>
+        <div title={ratingBlurb} className={styles.blurbContainer}><a className={styles.gold}><b>{starArr}</b></a><a className={styles.blueLarge}> {reviews.length}</a></div>
         <div className={styles.container}>
-          <div className={styles.blueSmall}>{avgRating} out of 5 stars</div><img className={styles.arrowDown} src='./img/arrowDown.png'></img>
+          <div className={styles.blueSmall}>{ratingBlurb}</div><img className={styles.arrowDown} src='./img/arrowDown.png'></img>
         </div>
         <div className={styles.histOuterContainer}><div className={styles.histogram}>{histogram}</div><div className={styles.shareContainer}><a className={styles.shareText}>Share your thoughts with other customers</a><br /><button className={styles.button}>Write a customer review</button></div></div>
         <div className={styles.container}>

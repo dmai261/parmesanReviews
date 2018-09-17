@@ -84,3 +84,8 @@
   padding-left: 1vmin;
   padding-right: 1vmin;
 }
+
+:local .greyFlex:hover {
+  color: #C15926 !important;
+  cursor: pointer;
+}
