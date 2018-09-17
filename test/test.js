@@ -8,7 +8,7 @@ import Review from '../client/src/components/Review.jsx';
 import TopReviews from '../client/src/components/TopReviews.jsx';
 
 const jest = require('jest-mock');
-const helpers = require('../server/helpers');
+const helpers = require('../server/helpers/helpers');
 
 configure({ adapter: new Adapter() });
 

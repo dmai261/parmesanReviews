@@ -2,13 +2,23 @@ import React from 'react';
 import $ from 'jquery';
 import styles from '../styles/Header.css';
 
+require('../../../server/helpers/jquery-visible.min.js');
+
 class Header extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  renderRatingHistogram(reviews) {
+  componentDidMount() {
+    setInterval(() => {
+      if ($('#scrollTarget').visible()) {
+        // wildcard jquery selector
+        $('[id^=histBar]').addClass(styles.animated);
+      }
+    }, 500);
+  }
 
+  renderRatingHistogram(reviews) {
     /*
     example data - reviews should be an array of objects like these
     {"_id":"5b918722d4a71c1897abb02f","productId":37,"reviewId":368,"username":"Parker_Nader66","stars":1,"title":"est dolore ducimus","text":"Vel molestias consequatur voluptatum vero labore dicta repellendus aut corporis. Et cupiditate minus nam. Perspiciatis dolorem omnis provident.","timestamp":"2018-02-01T17:26:28.993Z","numHelpful":965,"verifiedPurchase":true,"imageUrl":"http://lorempixel.com/640/480","__v":0}
@@ -39,7 +49,7 @@ class Header extends React.Component {
         <React.Fragment>
           <div className={styles.histBarContainer}>
             <a className={styles.blueFlex}>{currentStar} star</a>
-            <a style={style} className={styles.histBar}></a>
+            <a id={`histBar${index}`} style={style} className={styles.histBar}></a>
             <a className={styles.histBarBackground}></a>
             <a className={styles.blueFlexRight}>{percentageOfRatings}%</a>
             <br />
@@ -74,7 +84,7 @@ class Header extends React.Component {
         </div>
         <div className={styles.histOuterContainer}><div className={styles.histogram}>{histogram}</div><div className={styles.shareContainer}><a className={styles.shareText}>Share your thoughts with other customers</a><br /><button className={styles.button}>Write a customer review</button></div></div>
         <div className={styles.container}>
-          <p className={styles.blueSmall}>See all {reviews.length} customer reviews</p><img className={styles.blueArrowRight} src='./img/blueArrowRight.png'></img>
+          <p id="scrollTarget" className={styles.blueSmall}>See all {reviews.length} customer reviews</p><img className={styles.blueArrowRight} src='./img/blueArrowRight.png'></img>
         </div>
       </React.Fragment>
     );

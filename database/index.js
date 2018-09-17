@@ -1,7 +1,7 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 const faker = require('faker');
-const helpers = require('../server/helpers.js');
+const helpers = require('../server/helpers/helpers.js');
 
 class Database {
   constructor() {

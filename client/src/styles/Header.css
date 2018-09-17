@@ -70,6 +70,7 @@
   height: 2.25vmin;
   border-radius: 1px;
   box-shadow: inset 0 1px 2px rgba(0,0,0,.4), inset 0 0 0 1px rgba(0,0,0,.1);
+  display: none;
 }
 
 :local .histBarBackground {
@@ -120,7 +121,8 @@
 }
 
 /* TBD animate on scroll - hist bar animation */
-:local .histBar {
+:local .animated {
+  display: inline;
   -webkit-animation-name: stretchInLeft;
   -webkit-animation-duration: .5s;
   -webkit-animation-delay: 0.25;
