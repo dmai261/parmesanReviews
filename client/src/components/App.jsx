@@ -15,11 +15,17 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    // pull query fron url
+    const newCurrentProductId = window.location.href.match(/(\?|\&)id=(\d\d?\d?\d?\d?\d?\d?\d?)/)[2];
+    this.setState({
+      currentProductId: newCurrentProductId,
+    });
+
     // TBD refactor ajax request to fetch/promises/await
     const settings = {
       async: true,
       crossDomain: true,
-      url: `/reviews/${this.state.currentProductId}`,
+      url: `/reviews/${newCurrentProductId}`,
       method: 'GET',
       headers: {
         'content-type': 'application/json',
