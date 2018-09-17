@@ -44,6 +44,15 @@ class Server {
         res.status(202).send(data);
       });
     });
+
+    // increment helpfullness
+    this.app.get('/helpful/*', bodyParser.json(), (req, res) => {
+      const reviewId = req.originalUrl.split('/')[2]; // get reviewId from from url
+      db.incrementHelpfulness(reviewId, (err, data) => {
+        if (err) return console.error(err);
+        res.status(202).send();
+      });
+    });
   }
 
   handlePosts() {

@@ -59,8 +59,9 @@ class App extends React.Component {
       },
     };
 
-    $.ajax(settings).done((data) => {
-      console.log(`A successful GET request to server incremented the helpfulness of review with id ${reviewId}`);
+    $.ajax(settings).done(() => {
+      this.getReviews();
+      console.log(`A successful GET request to server incremented the helpfulness of review ${reviewId}`);
     });
   }
 
