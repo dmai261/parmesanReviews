@@ -123,12 +123,12 @@
 :local .histBar {
   -webkit-animation-name: stretchInLeft;
   -webkit-animation-duration: .5s;
-  -webkit-animation-delay: 0;
+  -webkit-animation-delay: 0.25;
   -webkit-animation-timing-function: ease-in;
 
   animation-name: stretchInLeft;
   animation-duration: .5s;
-  animation-delay: 0;
+  animation-delay: 0.25;
   timing-function: ease-in;
 }
 
