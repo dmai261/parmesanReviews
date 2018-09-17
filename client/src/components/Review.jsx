@@ -14,7 +14,7 @@ class Review extends React.Component {
     const { review } = this.props;
     // make some users anonymous randomly
     let { username } = review;
-    if (review.numHelpful % 5 === 0) {
+    if (username.length % 5 === 0) {
       username = 'Amazon Customer';
     }
     let isVerified = '';
