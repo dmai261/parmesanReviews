@@ -16,6 +16,10 @@
     margin: .5vmin;
 }
 
+:local .mentionItem:hover {
+    cursor: pointer;
+}
+
 :local .mentionContainer {
     display: flex;
     flex-wrap: wrap;

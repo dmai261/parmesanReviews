@@ -6,3 +6,8 @@ body {
 .grey {
   color: gray;
 }
+
+button:hover {
+  box-shadow: inset 0px 0px 10px 20px rgba(134, 134, 134, 0.06);
+  cursor: pointer;
+}
