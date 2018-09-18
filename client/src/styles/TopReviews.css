@@ -20,3 +20,9 @@
   align-items: center;
   padding-bottom: 1.5vmin;
 }
+
+:local h4 {
+  font-size: 1.8vmin;
+  padding-bottom: 0vmin;
+  margin-bottom: 1.25vmin;
+}
