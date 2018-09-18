@@ -1,0 +1,424 @@
+20180905)
+  Meet group
+  Setup GitHub org and repos
+  Record initial deliverables
+  Read reqs
+  use ids 001-100 to reference fake data
+    maybe agree on other data later if have time
+
+      // first draft of review schema
+      var mongoose = require('mongoose');
+      var Schema = mongoose.Schema;
+
+      var reviewsSchema = new Schema({
+        productId: Number,
+        reviewId: Number,
+        username: String,
+        stars: Number,
+        title: String,
+        timestamp: Date,
+        numHelpful: Number,
+        verifiedPurchase: Boolean,
+        imageUrl: String,
+      });
+
+************************************************************
+
+20180905)
+  setup database and fed fake data via recursive .save mongoose operations and faker
+  rendered data to the client
+  implemented modular css with babel/webpack styler-loader and css-loader
+  structure GET routing by pulling productId out of endpoint with node/url and * wildcard
+
+************************************************************
+
+20180907)
+  decide on using Atlassian git workflow https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
+  style client
+  implement local mongo db
+  PR code reviewed teammates code
+
+************************************************************
+
+20180909)
+  style client
+  use flex box to align elements horizontally
+  use PS to cut out image assets
+
+************************************************************
+
+20180910)
+  style client
+  create histogram structure with nested flexboxes
+  solve bug for Michelle - css webpack rule must be before jsx rule to work for some reason, TBD investigate why
+  overlapping a's by putting the top one inside the other one
+  hard to animated on scroll with react without using jquery, not a lot of progress on that, instead animating on load by applying css animation class directly to histBars
+  Didn't get to unit, integration, or end-to-end testing today due to lots of client styling work
+
+************************************************************
+
+20180911)
+  no meaningful work
+
+************************************************************
+
+20180912)
+  try to fix this CircleCI error
+    yarn install v0.24.4
+    info No lockfile found.
+    warning License should be a valid SPDX license expression
+    [1/4] Resolving packages...
+    warning momentjs@2.0.0: WARNING: The correct package name for Moment.js is 'moment', not 'momentjs'.
+    warning enzyme > rst-selector-parser > nearley > nomnom@1.6.2: Package no longer supported. Contact support@npmjs.com for more info.
+    [2/4] Fetching packages...
+    error css-loader@1.0.0: The engine "node" is incompatible with this module. Expected version ">= 6.9.0 <7.0.0 || >= 8.9.0".
+    error Found incompatible module
+    info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
+    Exited with code 1
+
+    create lockfile with npm shrinkwrap
+
+    Problems were encountered
+    npm ERR! Please correct and try again.
+    npm ERR! extraneous: @babel/core@7.0.0 /home/avincenthill/Projects/hrsf102-front-end-capstone/node_modules/@babel/core
+    npm ERR! extraneous: debug@3.1.0 /home/avincenthill/Projects/hrsf102-front-end-capstone/node_modules/@babel/core/node_modules/debug
+    npm ERR! extraneous: resolve@1.8.1 /home/avincenthill/Projects/hrsf102-front-end-capstone/node_modules/@babel/core/node_modules/resolve
+    npm ERR! extraneous: @babel/helpers@7.0.0 /home/avincenthill/Projects/hrsf102-front-end-capstone/node_modules/@babel/helpers
+    npm ERR! extraneous: momentjs@2.0.0 /home/avincenthill/Projects/hrsf102-front-end-capstone/node_modules/momentjs
+
+    suggested fix
+    npm install
+    npm prune
+
+    This command removes "extraneous" packages. If a package name is provided, then only packages matching one of the supplied names are removed.
+
+    Extraneous packages are packages that are not listed on the parent package's dependencies list.
+
+    npm dedupe
+
+    Searches the local package tree and attempts to simplify the overall structure by moving dependencies further up the tree, where they can be more effectively shared by multiple dependent packages.
+
+    The deduplication algorithm walks the tree, moving each dependency as far up in the tree as possible, even if duplicates are not found. This will result in both a flat and deduplicated tree.
+
+    npm install
+    npm shrinkwrap --dev
+
+    this didn't remove the errors
+
+    try deleting node_modules and npm install
+
+    lots of errors like this babel/plugin-proposal-object-rest-spread@7.0.0 requires a peer of @babel/core@^7.0.0-0 but none was installed.
+
+    try installing @babel/core@^7.0.0-0 --save
+
+    shrinkwrap now readout error peer invalid: ajv@^6.0.0, required by ajv-keywords@3.2.0
+
+    try ni ajv@^6.0.0 --save
+
+    afterwhich npm shrinkwrap worked to create
+
+    npm-shrinkwrap.json
+
+    not respected by circleci yarn dep process
+    https://yarnpkg.com/en/docs/migrating-from-npm
+    use the link to solve
+
+    yarn install v0.24.4
+    info No lockfile found.
+    warning npm-shrinkwrap.json found. This will not be updated or respected. See https://yarnpkg.com/en/docs/migrating-from-npm for more information.
+    warning License should be a valid SPDX license expression
+    [1/4] Resolving packages...
+    warning enzyme > rst-selector-parser > nearley > nomnom@1.6.2: Package no longer supported. Contact support@npmjs.com for more info.
+    [2/4] Fetching packages...
+    error css-loader@1.0.0: The engine "node" is incompatible with this module. Expected version ">= 6.9.0 <7.0.0 || >= 8.9.0".
+    error Found incompatible module
+    info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
+    Exited with code 1
+
+    running yarn
+    00h00m00s 0/0: : ERROR: There are no scenarios; must have at least one.
+
+    linux error You've got the wrong yarn smile The Yarn you're executing comes from the cmdtest package: http://manpages.ubuntu.com/manpages/xenial/man1/yarn.1.html. Uninstalling cmdtest should fix this. Once you've uninstalled it, follow the instructions on https://yarnpkg.com/en/docs/install#linux-tab to add the Yarn repo:
+
+    reinstalled and yarn worked, created a yarn.lock file
+
+    after pushing getting yarn to work with new error
+    yarn install v0.24.4
+    warning License should be a valid SPDX license expression
+    [1/4] Resolving packages...
+    [2/4] Fetching packages...
+    error css-loader@1.0.0: The engine "node" is incompatible with this module. Expected version ">= 6.9.0 <7.0.0 || >= 8.9.0".
+
+    tried yarn yarn --ignore-engines per forum discussions
+      not sure what this does
+
+    try updating node to 8.x
+
+    try yarn install --ignore-engines - change this in config.yml to solve css-loader problem
+
+    this worked. TBD ask Toby about whether this is best practice
+
+    moving on to testing, after running nr test I get
+    test/test.js
+    Test suite failed to run
+
+    Requires Babel "^7.0.0-0", but was loaded with "6.26.3". If you are sure you have a compatible version of @babel/core, it is likely that something in your build process is loading the wrong version. Inspect the stack trace of this error to look for the first entry that doesn't mention "@babel/core" or "babel-core" to see what is calling Babel. (While processing preset: "/home/avincenthill/Projects/hrsf102-front-end-capstone/node_modules/@babel/preset-env/lib/index.js")
+
+    try altering "engines": {
+    "nodejs": ">=8.10.0" in package.json
+
+    try ni --save babel-jest - this didn't work
+
+    try yarn add --dev babel-jest 'babel-core@^7.0.0-0' @babel/core regenerator-runtime - this worked!
+
+    adding coverage config in jest config in package.json with collectCoverageFrom [array]
+
+    collectCoverageFrom [array]
+    An array of glob patterns indicating a set of files for which coverage information should be collected. If a file matches the specified glob pattern, coverage information will be collected for it even if no tests exist for this file and it's never required in the test suite.
+
+    Example:
+
+    {
+      "collectCoverageFrom": [
+        "**/*.{js,jsx}",
+        "!**/node_modules/**",
+        "!**/vendor/**"
+      ]
+    }
+
+
+    helped michelle recover data with https://git-scm.com/book/en/v2/Git-Internals-Maintenance-and-Data-Recovery
+    git reflog to changed to branches
+    created a branch at most recent lost commit
+    merged into master and pushed
+
+    Root cause of that problem was assuming that push operations were working when they weren't for some still unknown reason, leaving Michelle not backed up and more vulnerable to single point of failure data loss
+
+    using https://jestjs.io/docs/en/webpack cuz css modules breaking jest
+    use mocks and moduleNameMapper to get around badly interpreted css files by jest
+
+    require jest-mock instead of require('jest')
+
+    need to configure enzyme with adapter
+
+
+************************************************************
+
+20180917)
+use dynamic componentDidMount get request on pulled var from window.location.href with regexes
+
+
+
+
+
+Date:
+
+Challenges faced:
+
+Actions taken:
+
+Results/Takeaways:
+
+Journal Ideas
+
+NOTES & ADVICE: ENGAGE CRITICALLY WITH YOUR CODE
+
+Compare & Contrast Different Code Solutions (pros & cons)
+
+Study common patterns and their variations (useful for frameworks)
+
+Refactor Code:
+    DRY code = “Do not Repeat Yourself”, make code modular and reusable
+    ES5 >> ES6
+    Callbacks >> Promises >> Observables >> Cycles?? (Async patterns: pros & cons)
+
+When approaching other people’s code or solution code…ask yourself:
+
+Have I done my thinking about the problem first?
+— Getting to a pseudocode and/or a diagram level of understanding of a problem means you probably have some insightful expectations that will help you navigate unfamiliar code.  Having expectations means you have something to test and that you can adjust your understanding based on the results of testing.  It does not mean that anything before you that doesn’t match your expectations is wrong!
+
+Do you understand how the legacy code is organized and designed to work?
+— It’s essential that you be able to adjust to pre-existing code and be able to work within it (projects are too big to redo for every new improvement
+
+Steps to approaching a new technology:
+
+What is it? What does it do?
+Find something to give you an overview to get some context:
+- Blog
+- Video - Tech Talk
+How does it do it?
+Find a simple example
+How is the code organized?
+Find the pattern - how is it like or unlike a normal function? (IOCE)
+What are the key elements involved? What are important variables / methods?
+What are the important bits? How do they interact? (DIAGRAM)
+Can I make a simple thing?
+Try it, copy the example, make it work somewhere & test it by changing little things
+Can I customize my simple thing?
+Imagine what simple thing you can do differently & start exploring the documentation to see if you can do it
+How do I use this in my project?
+Do I need to include anything else to make this work?
+How can I test it?  Consistent behavior, etc.
+Tests can be added as you code to ensure consistent delivery on expectations.
+How can I optimize it?
+Test performance on the back-end and the front-end
+
+I) DAILY LESSONS
+
+** Engage critically with your work and learning process.  Copy this page each day to do a short reflection on your progress.
+
+Daily summary of what you worked on & what you learned
+
+What went well?  What could be improved?
+
+What went badly?  What have you tried? What is next step?
+
+What observations do you have on the work done today? Yours? Others?
+
+What pointers or advice would you give someone who is facing the day you just had?  I wish I’d….
+
+What bugs/problems did you encounter? How did you explore it? How did you get past it?
+
+II) RESOURCES
+
+** What are the tools in your toolkit? What are they good for?  When and how would you use them?
+
+III) ERROR MESSAGES
+
+** Keep track of error messages that you come across.  It can be useful to know the exact text, where it came up, what technology it was related to (or the tech stack if it involved an interaction of tech used), and ultimately the problem that caused it and what your solution was
+Error Message
+Where
+Tech involved
+Describe the problem & solution
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IV) PERSONAL STRENGTHS/WEAKNESSES
+
+Weakness >> Studying >> Strength
+Areas of Weakness
+Topic of Study
+Areas of Strength
+Notes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IV) STUDY PLAN
+
+** Organize by concepts / areas of interest.  You can group them as shown below or go one by one if you want more specificity.
+Topic Area
+Topic of Study
+Priority Items
+Notes
+Completed
+Front End
+CSS
+jQuery
+D3
+Flexbox
+React
+React
+Flexbox
+Why you want to learn it? What in particular is difficult? Etc.
+
+
+Server
+
+
+
+
+
+
+
+
+Databases
+
+
+
+
+
+
+
+
+Mobile
+
+
+
+
+
+
+
+
+Desktop
+
+
+
+
+
+
+
+
+JS Fundamentals
+
+
+
+
+
+
+
+
+
+
+
+V) TIME TRACKER
+
+** If you want to get a better idea of how long you spend on different tasks or going down rabbit holes then you could consider setting timers after each commit and tracking how long each takes.  This can be useful down the road because you’ll see what you get faster at, what is slowing you down, and you’ll be able to estimate time for tasks better at the beginning of work.
+Date
+Project: Problem / Task / Commit Topic
+Topic of Learning / Exploration
+Time Spent
+2.9.18
+MVP: Create Server
+How to set up request in Express
+30 min
+
+
+
+
+
+
+
+
+

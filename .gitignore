@@ -26,3 +26,4 @@ dist/
 
 # environment
 .env
+public/bundle.js

@@ -7,8 +7,8 @@
     font-size: 1.5vmin;
     background-color: #D6E7E9;
     border-bottom: 1px solid black;
-    padding-left: 2vmin;
-    padding-right: 2vmin;
+    padding-left: 2.2vmin;
+    padding-right: 2.2vmin;
     height: 3vmin;
     line-height: 3vmin;
     text-align: center;
@@ -16,14 +16,18 @@
     margin: .5vmin;
 }
 
+:local .mentionItem:hover {
+    cursor: pointer;
+}
+
 :local .mentionContainer {
     display: flex;
     flex-wrap: wrap;
-    width: 75vmin;
+    width: 55vmin;
 }
 
 :local h4 {
-    font-size: 1.75vmin;
+    font-size: 1.8vmin;
     padding-bottom: 0vmin;
     margin-bottom: 1.25vmin;
 }
@@ -38,4 +42,11 @@
     display: flex;
     align-items: center;
     padding-bottom: .5vmin;
-  }
+}
+
+:local .blue:hover {
+  color: #C15926 !important;
+  cursor: pointer;
+  text-decoration: underline;
+}
+

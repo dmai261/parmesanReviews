@@ -6,32 +6,33 @@ class Review extends React.Component {
     super(props);
   }
 
+  handleHelpfulClick() {
+    this.props.incrementHelpfulness(this.props.review.reviewId);
+  }
+
   render() {
     const { review } = this.props;
-
     // make some users anonymous randomly
     let { username } = review;
-    if (review.numHelpful % 5 === 0) {
+    if (username.length % 5 === 0) {
       username = 'Amazon Customer';
     }
-
     let isVerified = '';
     if (review.verifiedPurchase) {
       isVerified = 'Verified Purchase';
     }
     const starArr = this.props.renderStarRating(review.stars, 1.5);
-
     return (
       <React.Fragment>
         <div className={styles.review}>
           <div className={styles.profileContainer}><img className={styles.profile} src='./img/profile.jpg'></img> {username}</div>
           <div><a className={styles.gold}><b>{starArr}</b> </a><b>{review.title}</b></div>
           <div className={styles.grey}>{moment(review.timestamp).format('MMMM DD, YYYY')}</div>
-          <a className={styles.lightGreyPad}> | </a><a className={styles.orange}><b>{isVerified}</b></a>
+          <a className={styles.grey}>Lorem: Ipsum 1-2</a><a className={styles.lightGreyPad}> | </a><a className={styles.orange}><b>{isVerified}</b></a>
           <p className={styles.text}>{review.text}</p>
           <p className={styles.grey}>{review.numHelpful} people found this helpful</p>
           <div className={styles.actionContainer}>
-            <button className={styles.buttonFlex}>Helpful</button>
+            <button className={styles.buttonFlex} onClick={this.handleHelpfulClick.bind(this)}>Helpful</button>
             <a className={styles.lightGreyFlex}>|</a>
             <a className={styles.greyFlex}>Comment</a>
             <a className={styles.lightGreyFlex}>|</a>

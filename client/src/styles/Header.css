@@ -11,11 +11,6 @@
   font-size: 1.5vmin;
 }
 
-:local .blueLarge {
-  color: #2D83E0;
-  font-size: 2vmin;
-}
-
 :local h3 {
   font-size: 2.25vmin;
   padding-bottom: 0vmin;
@@ -53,10 +48,10 @@
   justify-content: flex-start;
   align-items: center;
   align-content: center;
+  color: #0072D0;
 }
 
 :local .blueFlex {
-  color: #0072D0;
   white-space: nowrap;
   font-size: 1.5vmin;
   padding-left: 1vmin;
@@ -70,6 +65,7 @@
   height: 2.25vmin;
   border-radius: 1px;
   box-shadow: inset 0 1px 2px rgba(0,0,0,.4), inset 0 0 0 1px rgba(0,0,0,.1);
+  display: none;
 }
 
 :local .histBarBackground {
@@ -110,7 +106,6 @@
 }
 
 :local .blueFlexRight {
-  color: #0072D0;
   white-space: nowrap;
   font-size: 1.5vmin;
   padding-left: 1vmin;
@@ -120,18 +115,49 @@
 }
 
 /* TBD animate on scroll - hist bar animation */
-:local .histBar {
+:local .animated {
+  display: inline;
   -webkit-animation-name: stretchInLeft;
   -webkit-animation-duration: .5s;
-  -webkit-animation-delay: 0;
+  -webkit-animation-delay: 0.25;
   -webkit-animation-timing-function: ease-in;
 
   animation-name: stretchInLeft;
-  animation-duration: .5s;
-  animation-delay: 0;
+  animation-duration: .25s;
+  animation-delay: 0.25;
   timing-function: ease-in;
 }
 
 @keyframes stretchInLeft {
   from { width: 0%; }
+}
+
+:local .blueLarge:hover {
+  cursor: pointer;
+  color: #C15926 !important;
+}
+
+:local .blurbContainer:hover {
+  cursor: pointer;
+  color: #C15926 !important;
+}
+
+:local .blueLarge {
+  font-size: 2vmin;
+}
+
+:local .blurbContainer {
+  color: #2D83E0;
+}
+
+:local .blueSmall:hover {
+  color: #C15926 !important;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+:local .histBarContainer:hover {
+  color: #C15926 !important;
+  cursor: pointer;
+  text-decoration: underline;
 }

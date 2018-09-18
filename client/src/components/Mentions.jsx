@@ -4,28 +4,40 @@ import styles from '../styles/Mentions.css';
 class Mentions extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      expanded: false,
+    };
+  }
+
+  handleSeeMoreClick() {
+    const newExpanded = !this.state.expanded;
+    this.setState({
+      expanded: newExpanded,
+    });
   }
 
   render() {
-    const state = this.props.getState();
-    const { reviews } = state;
+    const mentionPhrases = ['lorem', 'ipsum', 'is', 'simply', 'dummy', 'text', 'of', 'the', 'printing', 'and', 'typesetting', 'industry', 'lorem', 'ipsum', 'is', 'simply', 'dummy', 'text', 'of', 'the', 'printing', 'and', 'typesetting', 'industry'];
+
+    let mentions = mentionPhrases.map((phrase, index) => {
+      return <div key={index} className={styles.mentionItem}>{phrase}</div>;
+    });
+
+    let seeMore = <React.Fragment><img className={styles.doubleArrowDown} src='./img/orangeDoubleArrowUp.png' /> <p className={styles.blue}>See less</p></React.Fragment>;
+
+    if (!this.state.expanded) {
+      mentions = mentions.slice(0, 15);
+      seeMore = <React.Fragment><img className={styles.doubleArrowDown} src='./img/doubleArrowDown.png' /> <p className={styles.blue}>See more</p></React.Fragment>;
+    }
+
     return (
       <React.Fragment>
         <h4>Read reviews that mention</h4>
         <div className={styles.mentionContainer}>
-          <div className={styles.mentionItem}>mention</div>
-          <div className={styles.mentionItem}>mentionmention</div>
-          <div className={styles.mentionItem}>mention</div>
-          <div className={styles.mentionItem}>mention</div>
-          <div className={styles.mentionItem}>mention</div>
-          <div className={styles.mentionItem}>mentionmention</div>
-          <div className={styles.mentionItem}>meon</div>
-          <div className={styles.mentionItem}>mentmention</div>
-          <div className={styles.mentionItem}>mention</div>
-          <div className={styles.mentionItem}>mtion</div>
+          {mentions}
         </div>
-        <div className={styles.container}>
-          <img className={styles.doubleArrowDown} src='./img/doubleArrowDown.png' /><p className={styles.blue}>See more</p>
+        <div className={styles.container} onClick={this.handleSeeMoreClick.bind(this)}>
+          {seeMore}
         </div>
       </React.Fragment>
     );

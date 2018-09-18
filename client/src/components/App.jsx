@@ -15,11 +15,25 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    this.getReviews();
+  }
+
+  getReviews() {
+    // pull query fron url
+    let newCurrentProductId;
+    if (window.location.href.match(/(\?|\&)id=(\d\d?\d?\d?\d?\d?\d?\d?)/)) {
+      newCurrentProductId = window.location.href.match(/(\?|\&)id=(\d\d?\d?\d?\d?\d?\d?\d?)/)[2];
+      this.setState({
+        currentProductId: newCurrentProductId,
+      });
+    } else {
+      newCurrentProductId = 1;
+    }
     // TBD refactor ajax request to fetch/promises/await
     const settings = {
       async: true,
       crossDomain: true,
-      url: `/reviews/${this.state.currentProductId}`,
+      url: `/reviews/${newCurrentProductId}`,
       method: 'GET',
       headers: {
         'content-type': 'application/json',
@@ -30,6 +44,24 @@ class App extends React.Component {
     $.ajax(settings).done((data) => {
       console.log(`A successful GET request to server returned ${data.length} review objects`);
       this.setState({ reviews: data });
+    });
+  }
+
+  incrementHelpfulness(reviewId) {
+    const settings = {
+      async: true,
+      crossDomain: true,
+      url: `/helpful/${reviewId}`,
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        'cache-control': 'no-cache',
+      },
+    };
+
+    $.ajax(settings).done(() => {
+      this.getReviews();
+      console.log(`A successful GET request to server incremented the helpfulness of review ${reviewId}`);
     });
   }
 
@@ -71,7 +103,7 @@ class App extends React.Component {
       <React.Fragment>
         <Header getState={this.getState.bind(this)} renderStarRating={this.renderStarRating.bind(this)} />
         <Mentions getState={this.getState.bind(this)} />
-        <TopReviews getState={this.getState.bind(this)} renderStarRating={this.renderStarRating.bind(this)} />
+        <TopReviews getState={this.getState.bind(this)} renderStarRating={this.renderStarRating.bind(this)} incrementHelpfulness={this.incrementHelpfulness.bind(this)} />
       </React.Fragment>
     );
   }
