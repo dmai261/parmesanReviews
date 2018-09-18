@@ -28,7 +28,7 @@ class Review extends React.Component {
           <div className={styles.profileContainer}><img className={styles.profile} src='./img/profile.jpg'></img> {username}</div>
           <div><a className={styles.gold}><b>{starArr}</b> </a><b>{review.title}</b></div>
           <div className={styles.grey}>{moment(review.timestamp).format('MMMM DD, YYYY')}</div>
-          <a className={styles.lightGreyPad}> | </a><a className={styles.orange}><b>{isVerified}</b></a>
+          <a className={styles.grey}>Lorem: Ipsum 1-2</a><a className={styles.lightGreyPad}> | </a><a className={styles.orange}><b>{isVerified}</b></a>
           <p className={styles.text}>{review.text}</p>
           <p className={styles.grey}>{review.numHelpful} people found this helpful</p>
           <div className={styles.actionContainer}>
