@@ -80,12 +80,12 @@ class App extends React.Component {
 
     const starArray = ratingArr.map((element, index) => {
       if (index + 1 <= numFullStars) {
-        return <img key='index' style={style} src='https://s3-us-west-1.amazonaws.com/avh-fec-component/img/fullStar.png'></img>;
+        return <img key={index} style={style} src='https://s3-us-west-1.amazonaws.com/avh-fec-component/img/fullStar.png'></img>;
       } else if (hasHalf) {
         hasHalf = false;
-        return <img key='index' style={style} src='https://s3-us-west-1.amazonaws.com/avh-fec-component/img/halfStar.png'></img>;
+        return <img key={index} style={style} src='https://s3-us-west-1.amazonaws.com/avh-fec-component/img/halfStar.png'></img>;
       } else {
-        return <img key='index' style={style} src='https://s3-us-west-1.amazonaws.com/avh-fec-component/img/emptyStar.png'></img>;
+        return <img key={index} style={style} src='https://s3-us-west-1.amazonaws.com/avh-fec-component/img/emptyStar.png'></img>;
       }
     });
 
