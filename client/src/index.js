@@ -10,7 +10,7 @@ class Client {
 
   init() {
     if (this.domElement) {
-      ReactDOM.render(<App />, this.domElement);
+      // ReactDOM.render(<App />, this.domElement);
     }
   }
 }
