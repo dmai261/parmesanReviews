@@ -23,11 +23,11 @@ class Mentions extends React.Component {
       return <div key={index} className={styles.mentionItem}>{phrase}</div>;
     });
 
-    let seeMore = <React.Fragment><img className={styles.doubleArrowDown} src='./img/orangeDoubleArrowUp.png' /> <p className={styles.blue}>See less</p></React.Fragment>;
+    let seeMore = <React.Fragment><img className={styles.doubleArrowDown} src='https://s3-us-west-1.amazonaws.com/avh-fec-component/img/orangeDoubleArrowUp.png' /> <p className={styles.blue}>See less</p></React.Fragment>;
 
     if (!this.state.expanded) {
       mentions = mentions.slice(0, 15);
-      seeMore = <React.Fragment><img className={styles.doubleArrowDown} src='./img/doubleArrowDown.png' /> <p className={styles.blue}>See more</p></React.Fragment>;
+      seeMore = <React.Fragment><img className={styles.doubleArrowDown} src='https://s3-us-west-1.amazonaws.com/avh-fec-component/img/doubleArrowDown.png' /> <p className={styles.blue}>See more</p></React.Fragment>;
     }
 
     return (

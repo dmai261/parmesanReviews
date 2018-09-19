@@ -25,7 +25,7 @@ class Review extends React.Component {
     return (
       <React.Fragment>
         <div className={styles.review}>
-          <div className={styles.profileContainer}><img className={styles.profile} src='./img/profile.jpg'></img> {username}</div>
+          <div className={styles.profileContainer}><img className={styles.profile} src='https://s3-us-west-1.amazonaws.com/avh-fec-component/img/profile.jpg'></img> {username}</div>
           <div><a className={styles.gold}><b>{starArr}</b> </a><b>{review.title}</b></div>
           <div className={styles.grey}>{moment(review.timestamp).format('MMMM DD, YYYY')}</div>
           <a className={styles.grey}>Lorem: Ipsum 1-2</a><a className={styles.lightGreyPad}> | </a><a className={styles.orange}><b>{isVerified}</b></a>
