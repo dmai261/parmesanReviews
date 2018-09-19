@@ -33,7 +33,7 @@ class App extends React.Component {
     const settings = {
       async: true,
       crossDomain: true,
-      url: `/reviews/${newCurrentProductId}`,
+      url: `${this.props.host}/reviews/${newCurrentProductId}`,
       method: 'GET',
       headers: {
         'content-type': 'application/json',
@@ -51,7 +51,7 @@ class App extends React.Component {
     const settings = {
       async: true,
       crossDomain: true,
-      url: `/helpful/${reviewId}`,
+      url: `${this.props.host}/helpful/${reviewId}`,
       method: 'GET',
       headers: {
         'content-type': 'application/json',

@@ -8,7 +8,8 @@ const db = require('../database/index.js');
 
 class Server {
   constructor() {
-    this.port = process.env.PORT1 || 1337;
+    this.port = process.env.PORT || 1337;
+    this.serverAddress = `http://localhost:${this.port}`;
     this.app = express();
     this.init();
   }
@@ -19,10 +20,10 @@ class Server {
       extended: true,
     }));
     this.app.listen(this.port);
-    console.log(`server listening on port ${this.port}...`);
+    console.log(`AVH component server listening on ${this.serverAddress}...`);
 
     this.app.use(express.static('public'));
-    console.log('server serving static react from /public...');
+    console.log(`AVH component server serving static react from /public on ${this.serverAddress}...`);
 
     this.handleGets();
     this.handlePosts();
@@ -30,14 +31,15 @@ class Server {
   }
 
   handleOptions() {
-    this.app.options('/reviews/*', (req, res) => {
+    this.app.options(`/reviews/*`, (req, res) => {
       res.status(200).send();
     });
   }
 
   handleGets() {
     // return reviews with posted productId
-    this.app.get('/reviews/*', bodyParser.json(), (req, res) => {
+    console.log('handling gets to', `/reviews/*`);
+    this.app.get(`/reviews/*`, bodyParser.json(), (req, res) => {
       const productId = req.originalUrl.split('/')[2]; // get productId from from url
       db.getReviews(productId, (err, data) => {
         if (err) return console.error(err);
@@ -46,7 +48,7 @@ class Server {
     });
 
     // increment helpfullness
-    this.app.get('/helpful/*', bodyParser.json(), (req, res) => {
+    this.app.get(`/helpful/*`, bodyParser.json(), (req, res) => {
       const reviewId = req.originalUrl.split('/')[2]; // get reviewId from from url
       db.incrementHelpfulness(reviewId, (err, data) => {
         if (err) return console.error(err);
@@ -57,14 +59,14 @@ class Server {
 
   handlePosts() {
     // increment the helpfulness of a review
-    this.app.post('/reviews/*/helpful', bodyParser.json(), (req, res) => {
+    this.app.post(`/reviews/*/helpful`, bodyParser.json(), (req, res) => {
       // TBD do stuff
       // console.log("POST to helpful");
       res.status(202).send();
     });
 
     // create a new review
-    this.app.post('/reviews/new', bodyParser.json(), (req, res) => {
+    this.app.post(`/reviews/new`, bodyParser.json(), (req, res) => {
       // TBD do stuff
       // console.log("POST to new review");
       res.status(202).send();

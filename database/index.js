@@ -5,7 +5,7 @@ const helpers = require('../server/helpers/helpers.js');
 
 class Database {
   constructor() {
-    this.usingMLab = true;
+    this.usingMLab = false;
     this.dburi = process.env.DBURI;
     this.user = process.env.DBUSER;
     this.pw = process.env.DBPW;
