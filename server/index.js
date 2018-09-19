@@ -34,6 +34,7 @@ class Server {
 
   handleOptions() {
     this.app.options(`/reviews/*`, (req, res) => {
+      res.header('Access-Control-Allow-Origin', '*');
       res.status(200).send();
     });
   }
