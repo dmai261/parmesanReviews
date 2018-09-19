@@ -3,7 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
-var url = require('url');
+const url = require('url');
 const db = require('../database/index.js');
 
 class Server {

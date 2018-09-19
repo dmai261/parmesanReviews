@@ -17,4 +17,4 @@ class Client {
 
 const client = new Client();
 
-module.exports = client;
+export default client;
