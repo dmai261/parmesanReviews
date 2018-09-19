@@ -3,13 +3,13 @@ const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
-const cors = require('cors')
+const cors = require('cors');
 const url = require('url');
 const db = require('../database/index.js');
 
 class Server {
   constructor() {
-    this.port = process.env.PORT || 1337;
+    this.port = process.env.SERVERPORT || 1337;
     this.serverAddress = `http://localhost:${this.port}`;
     this.app = express();
     this.init();
@@ -35,13 +35,12 @@ class Server {
   handleOptions() {
     this.app.options(`/reviews/*`, (req, res) => {
       res.header('Access-Control-Allow-Origin', '*');
-      res.status(200).send();
+      res.status(202).send();
     });
   }
 
   handleGets() {
     // return reviews with posted productId
-    console.log('handling gets to', `/reviews/*`);
     this.app.get(`/reviews/*`, bodyParser.json(), (req, res) => {
       const productId = req.originalUrl.split('/')[2]; // get productId from from url
       db.getReviews(productId, (err, data) => {

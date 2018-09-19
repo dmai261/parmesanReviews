@@ -6,7 +6,8 @@ class Client {
   constructor() {
     // TBD turn this on to see individual component
     this.renderingToDOM = true;
-    this.host = 'http://localhost:1337';
+    // TBD fix this hardcoded port below
+    this.host = `http://localhost:1337`;
     this.domElement = document.querySelector('#Reviews');
     this.init();
   }

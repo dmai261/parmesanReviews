@@ -44,8 +44,7 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "style-loader": "^0.23.0",
-    "webpack": "^4.17.2",
-    "webpack-s3-plugin": "^1.0.2"
+    "webpack": "^4.17.2"
   },
   "devDependencies": {
     "enzyme": "^3.6.0",
