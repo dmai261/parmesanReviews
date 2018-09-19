@@ -208,8 +208,14 @@
 use dynamic componentDidMount get request on pulled var from window.location.href with regexes
 
 
+************************************************************
 
-
+20180918)
+retroactively delete accidentally committed .env file on Sonia's project, git push -f up
+learn Docker with Please Contain Yourself tutorial
+host public files on S3 bucket
+attempt to start building proxy
+make img assets public on AWS S3 bucket
 
 Date:
 
