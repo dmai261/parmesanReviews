@@ -4,7 +4,7 @@ import App from './components/App.jsx';
 
 class Client {
   constructor() {
-    this.domElement = document.querySelector('.App');
+    this.domElement = document.querySelector('.Reviews') || document.querySelector('#Reviews');
     this.init();
   }
 
@@ -16,5 +16,6 @@ class Client {
 }
 
 const client = new Client();
+window.Reviews = App;
 
-module.exports = client;
+export default client;
