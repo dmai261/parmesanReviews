@@ -3,6 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
+const cors = require('cors')
 const url = require('url');
 const db = require('../database/index.js');
 
@@ -19,6 +20,7 @@ class Server {
     this.app.use(bodyParser.urlencoded({
       extended: true,
     }));
+    this.app.use(cors({ origin: this.serverAddress }));
     this.app.listen(this.port);
     console.log(`AVH component server listening on ${this.serverAddress}...`);
 
