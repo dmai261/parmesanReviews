@@ -38,6 +38,7 @@
 :local .text {
   margin-top: .5vmin;
   margin-bottom: .5vmin;
+  width: 60%;
 }
 
 :local p {

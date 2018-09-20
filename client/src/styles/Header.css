@@ -145,6 +145,7 @@
 
 :local .blueLarge {
   font-size: 2vmin;
+  font-weight: 400;
 }
 
 :local .blurbContainer {
