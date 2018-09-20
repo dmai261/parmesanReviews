@@ -1,19 +1,19 @@
 :local .blue {
-    font-size: 1.5vmin;
+    font-size: 1.75vmin;
     color: #2D83E0;
 }
 
 :local .mentionItem {
-    font-size: 1.5vmin;
+    font-size: 1.75vmin;
     background-color: #D6E7E9;
-    border-bottom: 1px solid black;
-    padding-left: 2.2vmin;
-    padding-right: 2.2vmin;
-    height: 3vmin;
-    line-height: 3vmin;
+    border-bottom: 1.16px solid black;
+    padding-left: 2.55vmin;
+    padding-right: 2.55vmin;
+    height: 3.48vmin;
+    line-height: 3.48vmin;
     text-align: center;
     vertical-align: middle;
-    margin: .5vmin;
+    margin: .58vmin;
 }
 
 :local .mentionItem:hover {
@@ -23,25 +23,25 @@
 :local .mentionContainer {
     display: flex;
     flex-wrap: wrap;
-    width: 55vmin;
+    width: 63.8vmin;
 }
 
 :local h4 {
-    font-size: 1.8vmin;
+    font-size: 2.088vmin;
     padding-bottom: 0vmin;
-    margin-bottom: 1.25vmin;
+    margin-bottom: 1.45vmin;
 }
 
 :local .doubleArrowDown{
-    height: 2vmin;
-    width: 2vmin;
+    height: 2.32vmin;
+    width: 2.32vmin;
 }
 
 :local .container {
     margin: auto;
     display: flex;
     align-items: center;
-    padding-bottom: .5vmin;
+    padding-bottom: .58vmin;
 }
 
 :local .blue:hover {

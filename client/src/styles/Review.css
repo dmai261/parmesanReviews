@@ -1,14 +1,14 @@
 :local .review {
-  font-size: 1.5vmin;
-  line-height: 2.25vmin;
+  font-size: 1.75vmin;
 }
 
 :local .grey {
   color: gray;
+  padding-bottom: 1vmin;
 }
 
 :local .orange {
-  font-size: 1.25vmin;
+  font-size: 1.45vmin;
   color: #C15926;
 }
 
@@ -17,27 +17,27 @@
 }
 
 :local .profile {
-  height: 3.5vmin;
-  width: 3.5vmin;
-  padding-right: 1.25vmin;
+  height: 4.06vmin;
+  width: 4.06vmin;
+  padding-right: 1.45vmin;
 }
 
 :local .profileContainer {
   margin: auto;
   display: flex;
   align-items: center;
-  padding-bottom: .75vmin;
+  padding-bottom: .87vmin;
 }
 
 :local .button {
-  height: 2.75vmin;
-  width: 10vmin;
-  font-size: 1.25vmin;
+  height: 3.19vmin;
+  width: 11.6vmin;
+  font-size: 1.75vmin;
 }
 
 :local .text {
-  margin-top: .5vmin;
-  margin-bottom: .5vmin;
+  margin-top: .58vmin;
+  margin-bottom: .58vmin;
   width: 60%;
 }
 
@@ -48,7 +48,7 @@
 
 :local .actionContainer {
   display: flex;
-  width: 45vmin;
+  width: 52.2vmin;
   justify-content: flex-start;
   align-items: center;
 }
@@ -58,8 +58,8 @@
   flex: 0;
   flex-shrink: 0;
   white-space: nowrap;
-  padding-left: 1vmin;
-  padding-right: 1vmin;
+  padding-left: 1.16vmin;
+  padding-right: 1.16vmin;
   text-align: center;
 }
 
@@ -68,22 +68,22 @@
   flex: 0;
   flex-shrink: 0;
   white-space: nowrap;
-  padding-left: 1vmin;
-  padding-right: 1vmin;
+  padding-left: 1.16vmin;
+  padding-right: 1.16vmin;
   text-align: center;
 }
 
 :local .buttonFlex {
   height: 2.75vmin;
-  max-width: 10vmin;
-  font-size: 1.25vmin;
+  max-width: 11.6vmin;
+  font-size: 1.75vmin;
   flex: 1;
 }
 
 :local .lightGreyPad {
   color: rgb(207, 207, 207);
-  padding-left: 1vmin;
-  padding-right: 1vmin;
+  padding-left: 1.16vmin;
+  padding-right: 1.16vmin;
 }
 
 :local .greyFlex:hover {

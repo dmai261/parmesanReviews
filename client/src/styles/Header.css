@@ -8,13 +8,13 @@
 
 :local .blueSmall {
   color: #2D83E0;
-  font-size: 1.5vmin;
+  font-size: 1.75vmin;
 }
 
 :local h3 {
-  font-size: 2.25vmin;
+  font-size: 2.63vmin;
   padding-bottom: 0vmin;
-  margin-bottom: 1.25vmin;
+  margin-bottom: 1.46vmin;
 }
 
 :local .blueArrowRight {
@@ -23,29 +23,29 @@
 }
 
 :local .arrowDown {
-  height: 2vmin;
-  width: 2vmin;
-  transform: translateY(.25vmin);
+  height: 2.34vmin;
+  width: 2.34vmin;
+  transform: translateY(.29vmin);
 }
 
 :local .border {
   border-width: 0;
-  border-top: 1px solid #e7e7e7;
-  padding-top: 1.5vmin;
+  border-top: 1.17px solid #e7e7e7;
+  padding-top: 1.75vmin;
 }
 
 :local .container {
   margin: auto;
   display: flex;
   align-items: center;
-  padding-bottom: .5vmin;
+  padding-bottom: .58vmin;
 }
 
 :local .histBarContainer {
   display: flex;
-  padding-bottom: .3vmin;
-  width: 25vmin;
-  height: 2.4vmin;
+  padding-bottom: .348vmin;
+  width: 29vmin;
+  height: 2.78vmin;
   justify-content: flex-start;
   align-items: center;
   align-content: center;
@@ -54,64 +54,64 @@
 
 :local .blueFlex {
   white-space: nowrap;
-  font-size: 1.5vmin;
-  padding-left: 1vmin;
-  padding-right: 1vmin;
-  width: 5vmin;
+  font-size: 1.75vmin;
+  padding-left: 1.16vmin;
+  padding-right: 1.16vmin;
+  width: 5.8vmin;
 }
 
 :local .histBar {
   background: linear-gradient(to bottom,#ffce00,#ffa700);
   background-color: #ffce00;
-  height: 2.25vmin;
-  border-radius: 1px;
-  box-shadow: inset 0 1px 2px rgba(0,0,0,.4), inset 0 0 0 1px rgba(0,0,0,.1);
+  height: 2.61vmin;
+  border-radius: 1.16px;
+  box-shadow: inset 0 1.16px 2.32px rgba(0,0,0,.4), inset 0 0 0 1.16px rgba(0,0,0,.1);
   display: none;
 }
 
 :local .histBarBackground {
   background: linear-gradient(to bottom,#eee,#f6f6f6);
   background-color: #f3f3f3;
-  height: 2.25vmin;
-  width: 24vmin;
-  border-radius: 1px;
-  box-shadow: inset 0 1px 2px rgba(0,0,0,.4), inset 0 0 0 1px rgba(0,0,0,.1);
+  height: 2.61vmin;
+  width: 27.84vmin;
+  border-radius: 1.16px;
+  box-shadow: inset 0 1.16px 2.32px rgba(0,0,0,.4), inset 0 0 0 1px rgba(0,0,0,.1);
 }
 
 :local .button {
-  height: 3.5vmin;
-  width: 20vmin;
-  margin-top: 2.5vmin;
-  font-size: 1.5vmin;
+  height: 4.06vmin;
+  width: 23.2vmin;
+  margin-top: 2.9vmin;
+  font-size: 1.75vmin;
 }
 
 :local .shareContainer {
-  padding-left: 4vmin;
-  font-size: 1.5vmin;
+  padding-left: 4.64vmin;
+  font-size: 1.75vmin;
 }
 
 :local .histOuterContainer {
   margin: auto;
   display: flex;
   align-content: flex-start;
-  padding-bottom: .5vmin;
-  padding-top: .5vmin;
+  padding-bottom: .58vmin;
+  padding-top: .58vmin;
 }
 
 :local .shareText {
-  margin-bottom: 1.5vmin;
+  margin-bottom: 1.75vmin;
 }
 
 :local .histogram {
-  width: 30vmin;
+  width: 34.8vmin;
 }
 
 :local .blueFlexRight {
   white-space: nowrap;
-  font-size: 1.5vmin;
-  padding-left: 1vmin;
-  padding-right: 1vmin;
-  width: 5vmin;
+  font-size: 1.75vmin;
+  padding-left: 1.16vmin;
+  padding-right: 1.16vmin;
+  width: 5.8vmin;
   text-align: right;
 }
 
@@ -119,13 +119,13 @@
 :local .animated {
   display: inline;
   -webkit-animation-name: stretchInLeft;
-  -webkit-animation-duration: .5s;
-  -webkit-animation-delay: 0.25;
+  -webkit-animation-duration: .58s;
+  -webkit-animation-delay: 0.29;
   -webkit-animation-timing-function: ease-in;
 
   animation-name: stretchInLeft;
-  animation-duration: .25s;
-  animation-delay: 0.25;
+  animation-duration: .29s;
+  animation-delay: 0.29;
   timing-function: ease-in;
 }
 
@@ -144,7 +144,7 @@
 }
 
 :local .blueLarge {
-  font-size: 2vmin;
+  font-size: 2.32vmin;
   font-weight: 400;
 }
 

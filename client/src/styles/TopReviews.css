@@ -1,28 +1,28 @@
 :local .blue {
   color: #2D83E0;
-  font-size: 1.3vmin;
+  font-size: 1.75vmin;
 }
 
 :local .button {
-  height: 3vmin;
-  width: 20vmin;
-  font-size: 1.25vmin;
+  height: 3.48vmin;
+  width: 25vmin;
+  font-size: 1.75vmin;
 }
 
 :local .blueArrowRight{
-  height: 2vmin;
-  width: 2vmin;
+  height: 2.32vmin;
+  width: 2.32vmin;
 }
 
 :local .container {
   margin: auto;
   display: flex;
   align-items: center;
-  padding-bottom: 1.5vmin;
+  padding-bottom: 1.75vmin;
 }
 
 :local h4 {
-  font-size: 1.8vmin;
+  font-size: 1.75vmin;
   padding-bottom: 0vmin;
-  margin-bottom: 1.25vmin;
+  margin-bottom: 2.9vmin;
 }
