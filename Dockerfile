@@ -1,7 +1,9 @@
 FROM node:8-alpine
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-COPY . .
+RUN mkdir -p /src/app
+WORKDIR /src/app
+COPY . /src/app
 RUN npm install
-EXPOSE 8080
-CMD [ "node", "./server/index.js" ]
+#RUN npm run build
+#RUN npm run seed
+EXPOSE 1337
+CMD [ "npm", "run", "startprod"]

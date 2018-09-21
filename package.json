@@ -12,7 +12,8 @@
     "start": "nodemon --inspect ./server/index.js",
     "test": "jest --coverage",
     "build": "webpack",
-    "seed": "node ./database/seed.js"
+    "seed": "node ./database/seed.js",
+    "startprod": "node ./server/index.js"
   },
   "dependencies": {
     "@babel/core": "^7.0.1",
