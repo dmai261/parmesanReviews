@@ -11,7 +11,7 @@
     "react-dev": "webpack --watch --display-error-details",
     "start": "nodemon --inspect ./server/index.js",
     "test": "jest --coverage",
-    "build": "echo 'TBD'",
+    "build": "webpack",
     "seed": "node ./database/seed.js"
   },
   "dependencies": {

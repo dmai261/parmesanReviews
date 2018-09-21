@@ -3,5 +3,5 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY . .
 RUN npm install
-EXPOSE 4000
+EXPOSE 8080
 CMD [ "node", "./server/index.js" ]
