@@ -32,6 +32,8 @@ class Server {
     this.handleGets();
     this.handlePosts();
     this.handleOptions();
+    this.handlePuts();
+    this.handleDelete();
   }
 
   handleOptions() {
@@ -73,7 +75,32 @@ class Server {
     this.app.post(`/reviews/new`, bodyParser.json(), (req, res) => {
       // TBD do stuff
       // console.log("POST to new review");
-      res.status(202).send();
+      db.createReviews(req.body);
+      res.status(202).send('Review Saved');
+    });
+  }
+
+  handlePuts() {
+    this.app.put(`/reviews/update/:reviewID/:productId`, bodyParser.json(), (req, res) => {
+      let reviewId = req.params.reviewID;
+      let productId = req.params.productId;
+      let data = req.body;
+      console.log(data);
+      db.updateReviews(data, reviewId, productId, (err, data) => {
+        if (err) return console.error(err);
+        res.status(202).send(data);
+      });
+    });
+  }
+  
+  handleDelete() {
+    this.app.delete(`/reviews/delete/:reviewID/:productId`, bodyParser.json(), (req, res) => {
+      let reviewId = req.params.reviewID;
+      let productId = req.params.productId;
+      db.deleteReviews(reviewId, productId, (err, data) => {
+        if (err) return console.error(err);
+        res.status(202).send(data);
+      });
     });
   }
 }

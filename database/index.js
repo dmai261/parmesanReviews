@@ -5,7 +5,7 @@ const helpers = require('../server/helpers/helpers.js');
 
 class Database {
   constructor() {
-    this.usingMLab = true;
+    this.usingMLab = false;
     this.dburi = process.env.DBURI;
     this.user = process.env.DBUSER;
     this.pw = process.env.DBPW;
@@ -94,8 +94,34 @@ class Database {
     });
   }
 
+  createReviews(reviewObj) {
+    const newReview = new this.Review(reviewObj);
+    this.Review.find({reviewId: reviewObj.reviewId, productId: reviewObj.productId}).exec((err, review) => {
+      if (review.length) {
+        newReview.save((err)=>{
+          return console.error(err);
+        });
+      }
+    });
+  }
+
+  updateReviews(reviewObj, reviewId, productId, cb) {
+    // const {reviewId, productId} = id;
+    this.Review.findOneAndUpdate({productId, reviewId}, reviewObj, (err, product) => {
+      if (err) console.error(err);
+      cb(null, product);
+    });
+  }
+
+  deleteReviews(reviewId, productId, cb) {
+    this.Review.findOneAndDelete({reviewId, productId}, (err, product) => {
+      if (err) console.error(err);
+      cb(null, product);
+    });
+  }
+
   init() {
-    mongoose.connect(this.dburi);
+    mongoose.connect(this.dburi, { useNewUrlParser: true });
     this.db = mongoose.connection;
     this.db.on('error', console.error.bind(console, 'db connection error:'));
     this.db.once('open', () => {
@@ -105,7 +131,7 @@ class Database {
 
   // TBD refactor in a DRY way with above
   initAndSeed() {
-    mongoose.connect(this.dburi);
+    mongoose.connect(this.dburi, { useNewUrlParser: true });
     this.db = mongoose.connection;
     this.db.on('error', console.error.bind(console, 'db connection error:'));
     this.db.once('open', () => {
