@@ -8,7 +8,7 @@
     "nodejs": ">=8.10.0"
   },
   "scripts": {
-    "react-dev": "webpack --watch --display-error-details",
+    "react-dev": "webpack --watch",
     "start": "nodemon --inspect ./server/index.js",
     "test": "jest --coverage",
     "build": "webpack",
@@ -32,7 +32,9 @@
     "enzyme": "^3.6.0",
     "express": "^4.16.3",
     "faker": "^4.1.0",
+    "file-system": "^2.2.2",
     "grunt": "^1.0.3",
+    "https-proxy-agent": "^2.2.1",
     "jest": "^23.5.0",
     "jquery": "^3.3.1",
     "jquery-visible": "^1.2.0",
@@ -40,7 +42,9 @@
     "moment": "^2.22.2",
     "mongoose": "^5.2.13",
     "morgan": "^1.9.0",
+    "newrelic": "^4.9.0",
     "nodemon": "^1.18.4",
+    "pg": "^7.5.0",
     "puppeteer": "^1.8.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
