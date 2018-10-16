@@ -3,6 +3,7 @@
 // const faker = require('faker');
 // const helpers = require('../server/helpers/helpers.js');
 const { Pool, Client } = require('pg');
+const redisClient = require('../psql_cache.js');
 
 var connectionString = {
   user: 'postgres',
@@ -85,14 +86,31 @@ class Database {
 
   getReviews(productId, cb) {
     const search = { productId };
-    console.log(search);
+    // console.log(search);
     var queryString = `SELECT reviewsData.*, productinfo.productname FROM reviewsData INNER JOIN productinfo ON (reviewsData.productid = productinfo.productid AND productinfo.productid = ${search.productId})`;
 
     this.pool.query(queryString, (err, res) => {
       if (err) return console.error({err});
-      console.log(res.rows);
+      redisClient.setex(productId, 10, JSON.stringify(res.rows));
       return cb(null, res.rows);
     });
+
+    // redisClient.get(productId, function (err, result) {
+    //   if (err) {
+    //     console.log('err');
+    //     console.error(err);
+    //   } else if (!result) {
+    //     console.log('!result');
+    //     pool.query(queryString, (err, res) => {
+    //       if (err) return console.error({err});
+    //       redisClient.setex(productId, 100, JSON.stringify(res.rows));
+    //       return cb(null, res.rows);
+    //     });
+    //   } else {
+    //     console.log('else');
+    //     return cb(null, JSON.parse(result));
+    //   }
+    // });
     // this.Review.find(search).sort({ numHelpful: -1 }).exec((err, reviews) => {
     //   if (err) return console.error(err);
     //   return cb(null, reviews);
@@ -114,16 +132,23 @@ class Database {
   //   });
   // }
 
-  // createReviews(reviewObj) {
-  //   const newReview = new this.Review(reviewObj);
-  //   this.Review.find({reviewId: reviewObj.reviewId, productId: reviewObj.productId}).exec((err, review) => {
-  //     if (review.length) {
-  //       newReview.save((err)=>{
-  //         return console.error(err);
-  //       });
-  //     }
-  //   });
-  // }
+  createReviews(reviewObj) {
+    var queryString = ``;
+
+    this.pool.query(queryString, (err, res) => {
+      if (err) return console.error({err});
+      console.log(res.rows);
+      return cb(null, res.rows);
+    });
+    // const newReview = new this.Review(reviewObj);
+    // this.Review.find({reviewId: reviewObj.reviewId, productId: reviewObj.productId}).exec((err, review) => {
+    //   if (review.length) {
+    //     newReview.save((err)=>{
+    //       return console.error(err);
+    //     });
+    //   }
+    // });
+  }
 
   // updateReviews(reviewObj, reviewId, productId, cb) {
   //   // const {reviewId, productId} = id;

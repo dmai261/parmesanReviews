@@ -1,0 +1,9 @@
+config:
+  target: 'http://localhost:1337'
+  phases:
+    - duration: 1
+      arrivalRate: 1000
+scenarios:
+  - flow:
+    - get:
+        url: "/reviews/1000001"
