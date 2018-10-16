@@ -14,7 +14,7 @@ class Server {
     this.port = process.env.PORT || 1337;
     this.proxyPort = process.env.PROXYPORT || 3000;
     this.serverAddress = `http://localhost:${this.port}`;
-    this.proxyAddress = `http://localhost:${this.proxyPort}`;
+    // this.proxyAddress = `http://localhost:${this.proxyPort}`;
     this.app = express();
     this.init();
   }
@@ -24,7 +24,7 @@ class Server {
     this.app.use(bodyParser.urlencoded({
       extended: true,
     }));
-    this.app.use(cors({ origin: this.proxyAddress }));
+    // this.app.use(cors({ origin: this.proxyAddress }));
     this.app.listen(this.port);
     console.log(`AVH component server listening on ${this.serverAddress}...`);
 
