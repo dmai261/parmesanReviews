@@ -49,15 +49,21 @@ class Server {
     // return reviews with posted productId
     this.app.get(`/reviews/*`, bodyParser.json(), (req, res) => {
       const productId = req.originalUrl.split('/')[2]; // get productId from from url
-      redisClient.get(productId, function (err, result) {
-        if (result) {
-          res.status(202).send(JSON.parse(result));
-        } else {
-          db.getReviews(productId, (err, data) => {
-            if (err) res.statusCode(404).send(err);
-            res.status(202).send(data);
-          });
-        }
+    //   redisClient.get(productId, function (err, result) {
+    //     if (result) {
+    //       res.status(202).send(JSON.parse(result));
+    //     } else {
+          // db.getReviews(productId, (err, data) => {
+          //   if (err) res.statusCode(404).send(err);
+          //   res.status(202).send(data);
+          // });
+    //     }
+    //   });
+    // });
+
+      db.getReviews(productId, (err, data) => {
+        if (err) res.statusCode(404).send(err);
+        res.status(202).send(data);
       });
     });
 

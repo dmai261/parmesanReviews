@@ -6,10 +6,10 @@ const { Pool, Client } = require('pg');
 const redisClient = require('../psql_cache.js');
 
 var connectionString = {
-  user: 'postgres',
-  host: 'localhost',
+  user: 'power_user',
+  host: 'ec2-54-159-217-184.compute-1.amazonaws.com',
   database: 'postgres',
-  password: 'password',
+  password: 'poweruser!@#',
   port: 5432,
 };
 
@@ -17,7 +17,7 @@ var connectionString = {
 
 class Database {
   constructor() {
-    // this.usingMLab = false;
+    // this.usingMLab = false; 
     // this.dburi = process.env.DBURI;
     // this.user = process.env.DBUSER;
     // this.pw = process.env.DBPW;
@@ -87,11 +87,11 @@ class Database {
   getReviews(productId, cb) {
     const search = { productId };
     // console.log(search);
-    var queryString = `SELECT reviewsData.*, productinfo.productname FROM reviewsData INNER JOIN productinfo ON (reviewsData.productid = productinfo.productid AND productinfo.productid = ${search.productId})`;
+    var queryString = `SELECT reviewsInfo.*, productinfo.productname FROM reviewsInfo INNER JOIN productinfo ON (reviewsInfo.productid = productinfo.productid AND productinfo.productid = ${search.productId})`;
 
     this.pool.query(queryString, (err, res) => {
       if (err) return console.error({err});
-      redisClient.setex(productId, 10, JSON.stringify(res.rows));
+      // redisClient.setex(productId, 10, JSON.stringify(res.rows));
       return cb(null, res.rows);
     });
 
