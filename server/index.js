@@ -47,6 +47,10 @@ class Server {
 
   handleGets() {
     // return reviews with posted productId
+    this.app.get(`/loaderio-db029dc468852e8be779b4ef13f90966`, bodyParser.json(), (req, res) => {
+      res.send('loaderio-db029dc468852e8be779b4ef13f90966');
+    });
+
     this.app.get(`/reviews/*`, bodyParser.json(), (req, res) => {
       const productId = req.originalUrl.split('/')[2]; // get productId from from url
     //   redisClient.get(productId, function (err, result) {
