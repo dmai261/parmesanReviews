@@ -7,7 +7,7 @@ const path = require('path');
 const cors = require('cors');
 const url = require('url');
 const db = require('../database/index.js');
-const redisClient = require('../psql_cache.js');
+// const redisClient = require('../psql_cache.js');
 
 class Server {
   constructor() {

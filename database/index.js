@@ -3,7 +3,7 @@
 // const faker = require('faker');
 // const helpers = require('../server/helpers/helpers.js');
 const { Pool, Client } = require('pg');
-const redisClient = require('../psql_cache.js');
+// const redisClient = require('../psql_cache.js');
 
 var connectionString = {
   user: 'power_user',
