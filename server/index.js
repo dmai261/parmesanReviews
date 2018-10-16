@@ -11,7 +11,7 @@ const db = require('../database/index.js');
 
 class Server {
   constructor() {
-    this.port = process.env.SERVERPORT || 1337;
+    this.port = process.env.PORT || 1337;
     this.proxyPort = process.env.PROXYPORT || 3000;
     this.serverAddress = `http://localhost:${this.port}`;
     this.proxyAddress = `http://localhost:${this.proxyPort}`;
