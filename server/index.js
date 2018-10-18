@@ -7,7 +7,7 @@ const path = require('path');
 const cors = require('cors');
 const url = require('url');
 const db = require('../database/index.js');
-// const redisClient = require('../psql_cache.js');
+const redisClient = require('../psql_cache.js');
 
 class Server {
   constructor() {
@@ -53,23 +53,24 @@ class Server {
 
     this.app.get(`/reviews/*`, bodyParser.json(), (req, res) => {
       const productId = req.originalUrl.split('/')[2]; // get productId from from url
-    //   redisClient.get(productId, function (err, result) {
-    //     if (result) {
-    //       res.status(202).send(JSON.parse(result));
-    //     } else {
-          // db.getReviews(productId, (err, data) => {
-          //   if (err) res.statusCode(404).send(err);
-          //   res.status(202).send(data);
-          // });
-    //     }
-    //   });
-    // });
-
-      db.getReviews(productId, (err, data) => {
-        if (err) res.statusCode(404).send(err);
-        res.status(202).send(data);
+      redisClient.get(productId, function (err, result) {
+        if (result) {
+          console.log(result);
+          res.status(202).send(JSON.parse(result));
+        } else {
+          db.getReviews(productId, (err, data) => {
+            if (err) res.statusCode(404).send(err);
+            res.status(202).send(data);
+          });
+        }
       });
     });
+
+    //   db.getReviews(productId, (err, data) => {
+    //     if (err) res.statusCode(404).send(err);
+    //     res.status(202).send(data);
+    //   });
+    // });
 
     // increment helpfullness
     this.app.get(`/helpful/*`, bodyParser.json(), (req, res) => {

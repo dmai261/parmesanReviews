@@ -1,5 +1,5 @@
 var redis = require('redis');
-var client = redis.createClient();
+var client = redis.createClient(6379, 'ec2-18-234-176-211.compute-1.amazonaws.com');
 
 client.on('error', function(err) {
   console.error(err);
@@ -9,8 +9,4 @@ client.on('connect', function() {
   console.log('Connected to Redis Client');
 });
 
-// client.get('my test key', function(error, result) {
-//   if (error) console.error(error);
-//   console.log('GET result ->', result);
-// });
 module.exports = client;

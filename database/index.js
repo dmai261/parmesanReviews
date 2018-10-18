@@ -3,8 +3,8 @@
 // const faker = require('faker');
 // const helpers = require('../server/helpers/helpers.js');
 const { Pool, Client } = require('pg');
-// const redisClient = require('../psql_cache.js');
-
+const redisClient = require('../psql_cache.js');
+//ec2-54-159-217-184.compute-1.amazonaws.com
 var connectionString = {
   user: 'power_user',
   host: 'ec2-54-159-217-184.compute-1.amazonaws.com',
@@ -91,7 +91,7 @@ class Database {
 
     this.pool.query(queryString, (err, res) => {
       if (err) return console.error({err});
-      // redisClient.setex(productId, 10, JSON.stringify(res.rows));
+      redisClient.setex(productId, 10, JSON.stringify(res.rows));
       return cb(null, res.rows);
     });
 
