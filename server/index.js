@@ -24,10 +24,10 @@ class Server {
       extended: true,
     }));
     this.app.listen(this.port);
-    console.log(`AVH component server listening on ${this.serverAddress}...`);
+    console.log(`server listening on ${this.serverAddress}...`);
 
     this.app.use(express.static('public'));
-    console.log(`AVH component server serving static react from /public on ${this.serverAddress}...`);
+    console.log(`server serving static react from /public on ${this.serverAddress}...`);
 
     this.handleGets();
     this.handlePosts();
@@ -53,7 +53,6 @@ class Server {
       const productId = req.originalUrl.split('/')[2]; // get productId from from url
       redisClient.get(productId, function (err, result) {
         if (result) {
-          console.log(result);
           res.status(202).send(JSON.parse(result));
         } else {
           db.getReviews(productId, (err, data) => {
@@ -96,7 +95,6 @@ class Server {
       let reviewId = req.params.reviewID;
       let productId = req.params.productId;
       let data = req.body;
-      console.log(data);
       db.updateReviews(data, reviewId, productId, (err, data) => {
         if (err) return console.error(err);
         res.status(202).send(data);
